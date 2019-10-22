@@ -1,4 +1,4 @@
-baseURL = "workshop.taskcat.io"
+baseURL = "taskcat.github.io/workshop/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Taskcat Workshop"
