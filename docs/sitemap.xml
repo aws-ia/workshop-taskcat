@@ -1,33 +1,35 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>taskcat.github.io/workshop/</loc>
+    <loc>workshop/</loc>
   </url>
   
   <url>
-    <loc>taskcat.github.io/workshop/10_lab1/10_prerequisites.html</loc>
+    <loc>workshop/10_lab1/10_prerequisites.html</loc>
   </url>
   
   <url>
-    <loc>taskcat.github.io/workshop/00_preface.html</loc>
+    <loc>workshop/00_preface.html</loc>
   </url>
   
   <url>
-    <loc>taskcat.github.io/workshop/00_preface/10_prerequisites.html</loc>
+    <loc>workshop/00_preface/10_prerequisites.html</loc>
   </url>
   
   <url>
-    <loc>taskcat.github.io/workshop/10_lab1.html</loc>
+    <loc>workshop/10_lab1.html</loc>
   </url>
   
   <url>
-    <loc>taskcat.github.io/workshop/categories.html</loc>
+    <loc>workshop/categories.html</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>taskcat.github.io/workshop/tags.html</loc>
+    <loc>workshop/tags.html</loc>
+    <priority>0</priority>
   </url>
   
 </urlset>

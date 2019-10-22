@@ -1,48 +1,48 @@
 [
 {
-	"uri": "taskcat.github.io/workshop/",
+	"uri": "workshop/",
 	"title": "Taskcat Workshop",
 	"tags": [],
 	"description": "",
 	"content": " taskcat workshop Welcome! In this workshop, you will ... "
 },
 {
-	"uri": "taskcat.github.io/workshop/10_lab1/10_prerequisites.html",
+	"uri": "workshop/10_lab1/10_prerequisites.html",
 	"title": "Basic Template",
 	"tags": [],
 	"description": "",
 	"content": " Building a basic cfn template Lets start by build a basic template that creates an s3 bucket\n"
 },
 {
-	"uri": "taskcat.github.io/workshop/00_preface.html",
+	"uri": "workshop/00_preface.html",
 	"title": "Prerequisites",
 	"tags": [],
 	"description": "",
 	"content": " Prerequisites for the Workshop  What We\u0026#39;ll Build   "
 },
 {
-	"uri": "taskcat.github.io/workshop/00_preface/10_prerequisites.html",
+	"uri": "workshop/00_preface/10_prerequisites.html",
 	"title": "What We&#39;ll Build",
 	"tags": [],
 	"description": "",
 	"content": " Our Goal In this workshop, we will learn:\n How to \u0026hellip;.  Architecture  End State Architecture \u0026hellip;  "
 },
 {
-	"uri": "taskcat.github.io/workshop/10_lab1.html",
+	"uri": "workshop/10_lab1.html",
 	"title": "Lab1",
 	"tags": [],
 	"description": "",
 	"content": " Lab1  Basic Template   "
 },
 {
-	"uri": "taskcat.github.io/workshop/categories.html",
+	"uri": "workshop/categories.html",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "taskcat.github.io/workshop/tags.html",
+	"uri": "workshop/tags.html",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
