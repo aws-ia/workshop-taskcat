@@ -1,4 +1,4 @@
-baseURL = "workshop/"
+baseURL = "workshop"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 title = "Taskcat Workshop"
