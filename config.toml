@@ -10,7 +10,8 @@ pygmentsCodeFences = true
 #pygmentsCodeFencesGuessSyntax = true
 #pygmentsStyle = "monokai"
 publishDir = "docs"
-
+RelativeURLs=true
+CanonifyURLs=true
 
 
 [blackfriday]
