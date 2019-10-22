@@ -3,31 +3,31 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>workshop/</loc>
+    <loc>/</loc>
   </url>
   
   <url>
-    <loc>workshop/10_lab1/10_prerequisites.html</loc>
+    <loc>/10_lab1/10_prerequisites.html</loc>
   </url>
   
   <url>
-    <loc>workshop/00_preface.html</loc>
+    <loc>/00_preface.html</loc>
   </url>
   
   <url>
-    <loc>workshop/00_preface/10_prerequisites.html</loc>
+    <loc>/00_preface/10_prerequisites.html</loc>
   </url>
   
   <url>
-    <loc>workshop/10_lab1.html</loc>
+    <loc>/10_lab1.html</loc>
   </url>
   
   <url>
-    <loc>workshop/categories.html</loc>
+    <loc>/categories.html</loc>
   </url>
   
   <url>
-    <loc>workshop/tags.html</loc>
+    <loc>/tags.html</loc>
   </url>
   
 </urlset>

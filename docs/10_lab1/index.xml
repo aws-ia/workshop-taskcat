@@ -2,20 +2,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Lab1 on Taskcat Workshop</title>
-    <link>workshop/10_lab1.html</link>
+    <link>/10_lab1.html</link>
     <description>Recent content in Lab1 on Taskcat Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="workshop/10_lab1/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/10_lab1/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Basic Template</title>
-      <link>workshop/10_lab1/10_prerequisites.html</link>
+      <link>/10_lab1/10_prerequisites.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>workshop/10_lab1/10_prerequisites.html</guid>
+      <guid>/10_lab1/10_prerequisites.html</guid>
       <description>Building a basic cfn template Lets start by build a basic template that creates an s3 bucket</description>
     </item>
     
