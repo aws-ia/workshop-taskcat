@@ -4,35 +4,49 @@
 	"title": "Taskcat Workshop",
 	"tags": [],
 	"description": "",
-	"content": " taskcat workshop Welcome! In this workshop, you will ... "
+	"content": " taskcat workshop Welcome! Our Goal In this workshop, we will learn:\n How to drink coffee  Architecture  Coffee Cup  "
 },
 {
-	"uri": "/10_lab1/10_prerequisites.html",
-	"title": "Basic Template",
+	"uri": "/00_prereq_env.html",
+	"title": "Prerequisites",
+	"tags": [],
+	"description": "",
+	"content": " Prerequisites for the Workshop  "
+},
+{
+	"uri": "/10_lab1.html",
+	"title": "Lab 1",
 	"tags": [],
 	"description": "",
 	"content": " Building a basic cfn template Lets start by build a basic template that creates an s3 bucket\n"
 },
 {
-	"uri": "/00_preface.html",
-	"title": "Prerequisites",
+	"uri": "/20_lab2.html",
+	"title": "Lab 2",
 	"tags": [],
 	"description": "",
-	"content": " Prerequisites for the Workshop  What We\u0026#39;ll Build   "
+	"content": " Building a basic cfn template Lets start by build a basic template that creates an s3 bucket\n"
 },
 {
-	"uri": "/00_preface/10_prerequisites.html",
-	"title": "What We&#39;ll Build",
+	"uri": "/30_lab3.html",
+	"title": "Lab 3",
 	"tags": [],
 	"description": "",
-	"content": " Our Goal In this workshop, we will learn:\n How to \u0026hellip;.  Architecture  End State Architecture \u0026hellip;  "
+	"content": " Building a basic cfn template Lets start by build a basic template that creates an s3 bucket\n"
 },
 {
-	"uri": "/10_lab1.html",
-	"title": "Lab1",
+	"uri": "/40_lab4.html",
+	"title": "Lab 4",
 	"tags": [],
 	"description": "",
-	"content": " Lab1  Basic Template   "
+	"content": " Building a basic cfn template Lets start by build a basic template that creates an s3 bucket\n"
+},
+{
+	"uri": "/50_lab5.html",
+	"title": "Lab 5",
+	"tags": [],
+	"description": "",
+	"content": " Building a basic cfn template Lets start by build a basic template that creates an s3 bucket\n"
 },
 {
 	"uri": "/categories.html",

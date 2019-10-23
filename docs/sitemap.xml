@@ -7,19 +7,27 @@
   </url>
   
   <url>
-    <loc>/10_lab1/10_prerequisites.html</loc>
-  </url>
-  
-  <url>
-    <loc>/00_preface.html</loc>
-  </url>
-  
-  <url>
-    <loc>/00_preface/10_prerequisites.html</loc>
+    <loc>/00_prereq_env.html</loc>
   </url>
   
   <url>
     <loc>/10_lab1.html</loc>
+  </url>
+  
+  <url>
+    <loc>/20_lab2.html</loc>
+  </url>
+  
+  <url>
+    <loc>/30_lab3.html</loc>
+  </url>
+  
+  <url>
+    <loc>/40_lab4.html</loc>
+  </url>
+  
+  <url>
+    <loc>/50_lab5.html</loc>
   </url>
   
   <url>
