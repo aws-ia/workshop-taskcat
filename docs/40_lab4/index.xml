@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Lab 1 on Taskcat Workshop</title>
-    <link>/10_lab1.html</link>
-    <description>Recent content in Lab 1 on Taskcat Workshop</description>
+    <title>Lab 4 on Taskcat Workshop</title>
+    <link>/40_lab4.html</link>
+    <description>Recent content in Lab 4 on Taskcat Workshop</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="/10_lab1/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/40_lab4/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>

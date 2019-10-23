@@ -6,8 +6,13 @@ weight: 1
 
 ## taskcat workshop
 
-### Welcome!
+#### Welcome!
 
-<p style='text-align: left;'>
-    In this workshop, you will ...
-</p>
+#### Our Goal
+In this workshop, we will learn:
+
+- How to drink coffee
+
+#### Architecture
+
+- Coffee Cup

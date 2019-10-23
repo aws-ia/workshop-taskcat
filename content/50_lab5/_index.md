@@ -1,7 +1,7 @@
 +++
-title = "Lab 1"
+title = "Lab 5"
 chapter = false
-weight = 10
+weight = 50
 +++
 
 ### Building a basic cfn template
