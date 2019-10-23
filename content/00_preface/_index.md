@@ -1,9 +1,14 @@
 +++
-title = "Prerequisites"
-chapter = true
+title = "What We'll Build"
+chapter = false
 weight = 10
 +++
 
-# Prerequisites for the Workshop
+### Our Goal
+In this workshop, we will learn:
 
-{{% children showhidden="false" %}}
+- How to ....
+
+### Architecture
+
+- End State Architecture ...
