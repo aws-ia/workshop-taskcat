@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 defaultContentLanguage = "en"
-title = "Taskcat Workshop"
+title = "taskcat workshop"
 theme = "learn"
 uglyurls = true
 #googleAnalytics = "UA-136137356-1"
@@ -20,8 +20,8 @@ hrefTargetBlank = true
 [params]
 themeVariant = "blue"
 showVisitedLinks = false
-author = "Tony Vattathil"
-description = "Taskcat Workshop"
+author = "Tony Vattathil, Andrew Glenn, Shivansh Signh, Jay McConnell"
+description = "taskcat workshop"
 disableSearch = false
 disableAssetsBusting = false
 disableLanguageSwitchingButton = true
@@ -39,7 +39,7 @@ disableShortcutsTitle=true
 [[menu.shortcuts]]
 name = "<i class='fas fa-bookmark'></i> taskcat documentation"
 identifier = "taskcatio"
-url = "https://taskcat.io/"
+url = "https://aws-quickstart.github.io/taskcat/"
 weight = 20
 
 [[menu.shortcuts]] 
