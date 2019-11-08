@@ -21,6 +21,13 @@
 	"content": " What you will do in this lab: Using the provided clouformation template build a taskcat config\nFrom the vscode file browser navigate to the lab_assets/start/lab1/, In lab_assets you will see a cfn_project folder\nWe will build out lab1 in this folder!\n Hint: Consider cfn_project as the root of your Cloudformation project\n Browse to the templates directory with in cfn_project and inspect lab1.template.yaml and taskcat.yml (Double click on the file to open them in the ide tabs)\n"
 },
 {
+	"uri": "/10_lab1/20_page2.html",
+	"title": "Build .taskcat.yml",
+	"tags": [],
+	"description": "",
+	"content": " What you will do in this lab: Open the .taskcat.yml in lab_assets/start/lab1/cfn_project\n Note scheme validation is plugged into vscode\n "
+},
+{
 	"uri": "/20_lab2.html",
 	"title": "Lab 2",
 	"tags": [],
@@ -28,11 +35,25 @@
 	"content": " Building a basic cfn template Lets start by build a basic template that creates an s3 bucket\n"
 },
 {
+	"uri": "/10_lab1/30_page3.html",
+	"title": "Add a project section",
+	"tags": [],
+	"description": "",
+	"content": " Add a project section for the value of name: specify the name of the project folder\nproject: name: cfn-project  "
+},
+{
 	"uri": "/30_lab3.html",
 	"title": "Lab 3",
 	"tags": [],
 	"description": "",
 	"content": " Building a basic cfn template Lets start by build a basic template that creates an s3 bucket\n"
+},
+{
+	"uri": "/10_lab1/40_page4.html",
+	"title": "Add a test section",
+	"tags": [],
+	"description": "",
+	"content": " Add a test section  define a test mytest\n specfiy the name of your template: lab1.template.yaml\n define the region: you want to test (for now just specifiy one) us-east-1\n add the parameters: this template does not require any parameters so just {} (to specify no params)\n  tests: mytest: template: workshop.yaml regions: - us-east-1 parameters: {}  "
 },
 {
 	"uri": "/40_lab4.html",
