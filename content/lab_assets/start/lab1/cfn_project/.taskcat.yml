@@ -1,8 +1,4 @@
-project:
-  name: taskcat-workshop
-tests:
-  mytest:
-    template: workshop.yaml
-    regions:
-    - us-east-1
-    parameters: {}
+# Build your taskcat config year. 
+# Note scheme validation is plugged into vscode
+# Follow the lab direction to build you taskcat config file:w
+
