@@ -1,0 +1,35 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      PolicyDocument:
+        Id: MyPolicy
+        Version: 2012-10-17
+        Statement:
+          - Sid: BucketAccess
+            Effect: Allow
+            Principal: '*'
+            Action: 
+             - 's3:GetObject'
+            Resource: !Sub arn:aws:s3:::${S3Bucket}/*
+      Bucket: !Ref S3Bucket
+  CopyZipsTemplate:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Sub "https://${S3BucketName}.${AWS::Region}.amazonaws.com/${S3KeyPrefix}/templates/copy-zips.template.yaml"
+      Parameters:
+        S3BucketName: !Ref S3BucketName
+        S3KeyPrefix: !Ref S3KeyPrefix
+        SourceObjects: "TODO_REPLACE_ME_FUNCTIONS_LAMBDA_PATH"
+Outputs:
+  S3BucketSecureURL:
+    Value: !Join 
+      - ''
+      - - 'https://'
+        - !GetAtt 
+          - S3Bucket
+          - DomainName
+    Description: Name of S3 bucket to hold website content

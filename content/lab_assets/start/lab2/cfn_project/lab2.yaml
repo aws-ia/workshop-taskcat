@@ -1,0 +1,116 @@
+AWSTemplateFormatVersion: 2010-09-09
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      PolicyDocument:
+        Id: MyPolicy
+        Version: 2012-10-17
+        Statement:
+          - Sid: BucketAccess
+            Effect: Allow
+            Principal: '*'
+            Action: 
+             - 's3:GetObject'
+            Resource: !Sub arn:aws:s3:::${S3Bucket}/*
+      Bucket: !Ref S3Bucket
+  APIGateway:
+    Type: "AWS::ApiGateway::RestApi"
+    Properties:
+      Name: "APIGW-Example"
+      Description: "API Gateway in the Taskcat Workshop"
+  APIGatewayRootMethod:
+    Type: "AWS::ApiGateway::Method"
+    Properties:
+      AuthorizationType: "NONE"
+      HttpMethod: "POST"
+      Integration:
+        IntegrationHttpMethod: "POST"
+        Type: "AWS_PROXY"
+        Uri: !Sub "arn:aws:apigateway:${AWS::Region}:lambda:path/2015-03-31/functions/${LambdaFunction.Arn}/invocations"
+      ResourceId: !GetAtt "APIGateway.RootResourceId"
+      RestApiId: !Ref "APIGateway"
+  APIGatewayDeployment:
+    Type: "AWS::ApiGateway::Deployment"
+    DependsOn:
+      - "APIGatewayRootMethod"
+    Properties:
+      RestApiId: !Ref APIGateway
+      StageName: "hello"
+  LambdaFunction:
+    Type: "AWS::Lambda::Function"
+    Properties:
+      Code:
+        # TODO: ZIPFILE
+        ZipFile: |
+          def handler(event,context):
+            return {
+              'body': 'Hello!',
+              'headers': {
+                'Content-Type': 'text/plain'
+              },
+              'statusCode': 200
+            }
+      Description: "Function for Taskcat workshop"
+      FunctionName: "Taskcat-Workshop-Lambda"
+      Handler: "index.handler"
+      MemorySize: 128
+      Role: !GetAtt "LambdaIAMRole.Arn"
+      Runtime: "python3.7"
+      Timeout: 10
+
+  LambdaAPIGatewayInvocation:
+    Type: "AWS::Lambda::Permission"
+    Properties:
+      Action: "lambda:InvokeFunction"
+      FunctionName: !GetAtt "LambdaFunction.Arn"
+      Principal: "apigateway.amazonaws.com"
+      SourceArn: !Sub "arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:${APIGateway}/*/POST/"
+
+  LambdaIAMRole:
+    Type: "AWS::IAM::Role"
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Action:
+              - "sts:AssumeRole"
+            Effect: "Allow"
+            Principal:
+              Service:
+                - "lambda.amazonaws.com"
+      Policies:
+        - PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Action:
+                  - "logs:CreateLogGroup"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                Effect: "Allow"
+                Resource:
+                  - !Sub "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/Taskcat-Workshop-Lambda:*"
+          PolicyName: "lambda"
+
+  LambdaLogGroup:
+    Type: "AWS::Logs::LogGroup"
+    Properties:
+      LogGroupName: "/aws/lambda/Taskcat-Workshop-Lambda"
+      RetentionInDays: 90
+
+Outputs:
+  S3BucketSecureURL:
+    Value: !Join 
+      - ''
+      - - 'https://'
+        - !GetAtt 
+          - S3Bucket
+          - DomainName
+    Description: Name of S3 bucket to hold website content
+  APIGatewayInvokeURL:
+    Value: !Sub "https://${APIGateway}.execute-api.${AWS::Region}.amazonaws.com/hello"
+  LambdaArn:
+    Value: !GetAtt "LambdaFunction.Arn"
+
