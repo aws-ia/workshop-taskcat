@@ -7,11 +7,11 @@
 	"content": " taskcat workshop Whether authoring an AWS Quick Start or building an AWS Marketplace template to deploy your product on AWS, having confidence that your AWS CloudFormation templates are the best possible quality is key to wowing your customers. Learn to develop templates that are reliable, best practice, and portable across regions. In this workshop, we cover AWS CloudFormation best practices, tips on authoring AAA templates, and hands-on building of a CI/CD pipeline to validate templates before they are published.\nWhat you will learn  Using taskcat in your development environment to increase velocity while improving quality Using taskcat in a CI/CD workflow to ensure quality of releases Some best practices for building highly portable and durable CloudFormation templates  Architecture # TODO\n"
 },
 {
-	"uri": "/00_prereq_env.html",
+	"uri": "/00_lab0.html",
 	"title": "Prerequisites",
 	"tags": [],
 	"description": "",
-	"content": " Prerequisites for the Workshop  "
+	"content": " Prerequisites for the Workshop  What you will need to get started! You will be porovided taskcat Workshop-Hash: b76bbe879be74e988678bb4a831365f3\nOpen a webrowser and navigate to https://dashboard.eventengine.run/\nEnter the Workshop-Hash to proceed\n"
 },
 {
 	"uri": "/10_lab1.html",
@@ -53,7 +53,7 @@
 	"title": "Add a test section",
 	"tags": [],
 	"description": "",
-	"content": " Add a test section  define a test mytest\n specfiy the name of your template: lab1.template.yaml\n define the region: you want to test (for now just specifiy one) us-east-1\n add the parameters: this template does not require any parameters so just {} (to specify no params)\n  tests: mytest: template: workshop.yaml regions: - us-east-1 parameters: {}  "
+	"content": " Add a test section  define a test mytest\n specfiy the name of your template: lab1.template.yaml\n define the region: you want to test (for now just specifiy one) us-east-1\n add the parameters: this template does not require any parameters so just {} (to specify no params)\n  tests: mytest: template: lab1.template.yaml regions: - us-east-1 parameters: {}  "
 },
 {
 	"uri": "/40_lab4.html",
