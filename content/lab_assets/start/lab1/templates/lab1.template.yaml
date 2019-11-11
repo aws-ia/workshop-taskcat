@@ -51,4 +51,4 @@ Resources:
       Timeout: 300
       Code:
         S3Bucket: !Ref 'S3BucketName'
-        S3Key: !Sub '${S3KeyPrefix}functions/packages/GenRandom/lambda.zip'
+        S3Key: !Sub '${S3KeyPrefix}lambda_functions/zips/GenRandom/lambda.zip'

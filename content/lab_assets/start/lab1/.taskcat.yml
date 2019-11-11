@@ -5,6 +5,7 @@ tests:
     template: templates/lab1.template.yaml
     regions:
     - us-east-1
-    parameters: {}
+    parameters:
+      S3KeyPrefix: 'cfn-project'
 
 
