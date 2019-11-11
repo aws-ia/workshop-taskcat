@@ -1,8 +1,0 @@
-project:
-  name: taskcat-workshop
-tests:
-  mytest:
-    template: workshop.yaml
-    regions:
-    - us-east-1
-    parameters: {}

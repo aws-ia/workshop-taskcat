@@ -11,6 +11,6 @@ Open the **.taskcat.yml** in **lab_assets/start/lab1/cfn_project**
 
 > Note scheme validation is plugged into vscode
 
-![fig1.1](https://github.com/taskcat/workshop/raw/master/docs/lab_assets/start/lab1/images/fig_lab1.2.png)
+![fig1.1](/10_lab1/images/fig_lab1.2.png)
 
 

@@ -18,6 +18,7 @@ We will build out `lab1` in this folder!
 Browse to the templates directory with in cfn_project and inspect **lab1.template.yaml** and **taskcat.yml** 
 (Double click on the file to open them in the ide tabs)
 
-![fig1.1](https://github.com/taskcat/workshop/raw/master/docs/lab_assets/start/lab1/images/fig_lab1.1.png)
+![fig1.1](/10_lab1/images/fig_lab1.1.png)
+
 
 

@@ -19,7 +19,7 @@ weight = 40
 ```
 tests:
   mytest:
-    template: workshop.yaml
+    template: templates/lab1.template.yaml
     regions:
     - us-east-1
     parameters: {}
