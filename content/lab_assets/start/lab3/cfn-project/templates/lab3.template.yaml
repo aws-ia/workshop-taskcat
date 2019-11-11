@@ -27,12 +27,3 @@ Resources:
         S3BucketName: !Ref S3BucketName
         S3KeyPrefix: !Ref S3KeyPrefix
         SourceObjects: "TODO_REPLACE_ME_FUNCTIONS_LAMBDA_PATH"
-Outputs:
-  S3BucketSecureURL:
-    Value: !Join 
-      - ''
-      - - 'https://'
-        - !GetAtt 
-          - S3Bucket
-          - DomainName
-    Description: Name of S3 bucket to hold website content
