@@ -39,7 +39,7 @@ disableShortcutsTitle=true
 [[menu.shortcuts]]
 name = "<i class='fas fa-bookmark'></i> taskcat documentation"
 identifier = "taskcatio"
-url = "https://aws-quickstart.github.io/taskcat/"
+url = "https://taskcat.github.io/workshop/"
 weight = 20
 
 [[menu.shortcuts]] 
