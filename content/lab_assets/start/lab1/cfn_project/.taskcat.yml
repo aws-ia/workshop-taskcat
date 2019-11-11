@@ -1,4 +1,10 @@
-# Build your taskcat config year. 
-# Note scheme validation is plugged into vscode
-# Follow the lab direction to build you taskcat config file:w
+project:
+  name: cfn-project
+tests:
+  mytest:
+    template: templates/lab1.template.yaml
+    regions:
+    - us-east-1
+    parameters: {}
+
 

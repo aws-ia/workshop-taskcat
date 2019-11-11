@@ -6,4 +6,5 @@ weight = 9
 
 # Prerequisites for the Workshop
 
-{{% children showhidden="false" %}}
+{{% children showhidden="true" %}}
+
