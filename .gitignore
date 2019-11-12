@@ -2,3 +2,5 @@
 resources/_gen/*
 content/lab_assets/start/lab1/lambda_functions/packages/*
 docs/
+taskcat_outputs/
+
