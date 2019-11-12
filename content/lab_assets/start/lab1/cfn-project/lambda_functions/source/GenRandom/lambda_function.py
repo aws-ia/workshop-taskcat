@@ -1,15 +1,53 @@
+#!/usr/bin/env python
+"""
+Function to generate a random string
+author: avattathil@gmail.com
+license: Apache 2.0
+"""
+
 import random
-import json
-import cfnresponse
-from cfnresponse import send, SUCCESS
+import string
+
+from crhelper import CfnResource
+
+CRHELPER = CfnResource()
+
+
+"""
+Run on Create and Update
+"""
+
+
+@CRHELPER.create
+@CRHELPER.update
+def _generate_random_string(event, _):
+
+    if event["ResourceProperties"]["Length"] is not None:
+        _length = int(event["ResourceProperties"]["Length"])
+
+    else:
+        _length = 8
+
+    _seed = f"{string.ascii_letters}{string.digits}"
+    _generated_string = "".join(random.choice(_seed) for x in range(_length))
+
+    CRHELPER.Data["RandomString"] = _generated_string
+
+
+"""
+No delete operation is needed for this program
+"""
+
+
+@CRHELPER.delete
+def no_op(_, __):
+    pass
+
+
+"""
+handler main
+"""
+
 
 def handler(event, context):
-   if event['RequestType'] == 'Delete':
-       send(event, context, 'SUCCESS', {})
-       return
-   if event['RequestType'] == 'Create':
-       token= "%0x%0x" % (random.SystemRandom().getrandbits(3*8),random.SystemRandom().getrandbits(8*8))
-       responseData = {}
-       responseData['Data'] = token
-       send(event, context, 'SUCCESS', responseData)
-       return token
+    CRHELPER(event, context)

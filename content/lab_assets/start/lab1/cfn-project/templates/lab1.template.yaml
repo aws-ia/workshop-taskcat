@@ -52,33 +52,11 @@ Resources:
       Code:
         S3Bucket: !Ref 'S3BucketName'
         S3Key: !Sub '${S3KeyPrefix}lambda_functions/packages/GenRandom/lambda.zip'
-  GetID:
-    Type: Custom::GenerateID
-    Version: '1.0'
+  StringGenerator:
+    Type: Custom::RandomString
     Properties:
-      ServiceToken:
-        Fn::GetAtt:
-        - GenRandomLambda
-        - Arn
-      ResponseURL:
-        Fn::Join:
-        - ''
-        - - http://ResponseURL
-          - Ref: AWS::StackId
-          - RequestId
-      StackId:
-        Ref: AWS::StackId
-      ResourceProperties:
-        RequestType: Create
-        RequestId:
-          Fn::Join:
-          - ''
-          - - Ref: AWS::StackId
-            - RequestId
-        LogicalResourceId: GenIDLogicalResourceId
+      ServiceToken: !GetAtt GenRandomLambda.Arn
+      Length: 12
 Outputs:
   GeneratedRandomString:
-    Value:
-      Fn::GetAtt:
-      - GetID
-      - Data
+    Value: !GetAtt StringGenerator.RandomString
