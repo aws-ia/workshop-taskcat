@@ -6,6 +6,7 @@ tests:
     regions:
     - us-east-1
     parameters:
-      S3KeyPrefix: 'cfn-project'
+      S3S3BucketNAme: '$[taskcat_autobucket]'
+      S3KeyPrefix: 'cfn-project/'
 
 
