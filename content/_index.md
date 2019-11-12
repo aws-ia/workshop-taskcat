@@ -17,8 +17,8 @@ building of a CI/CD pipeline to validate templates before they are published.
 
 - Using taskcat in your development environment to increase velocity while improving 
 quality
-- Using taskcat in a CI/CD workflow to ensure quality of releases
 - Some best practices for building highly portable and durable CloudFormation templates
+- Using taskcat in a CI/CD workflow to ensure quality of releases
 
 #### Architecture
 
