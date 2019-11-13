@@ -3,10 +3,10 @@ Parameters:
   S3BucketName:
     AllowedPattern: '^[0-9a-zA-Z]+([0-9a-zA-Z-]*[0-9a-zA-Z])*$'
     ConstraintDescription: >-
-      Quick Start bucket name can include numbers, lowercase letters, uppercase
+      Bucket name can include numbers, lowercase letters, uppercase
       letters, and hyphens (-). It cannot start or end with a hyphen (-).
     Description: >-
-      S3 bucket name for the Quick Start assets. Quick Start bucket name can
+      S3 bucket name for assets. Bucket name can
       include numbers, lowercase letters, uppercase letters, and hyphens (-). It
       cannot start or end with a hyphen (-).
     Type: String
@@ -14,16 +14,16 @@ Parameters:
     AllowedPattern: '^[0-9a-zA-Z-/]*$'
     ConstraintDescription: >-
       Can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slash (/).
-    Default: 'cfn-project'
+    Default: 'cfn-project/'
     Description: >-
-      S3 key prefix where assets are located should end withforward slash (/).
+      S3 key prefix where assets are located should end with forward slash (/).
     Type: String
 Resources:
   CopyZipsTemplate:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub "https://${S3BucketName}.${AWS::Region}.amazonaws.com/${S3KeyPrefix}/templates/copy-zips.template.yaml"
+      TemplateURL: !Sub "https://${S3BucketName}.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
       Parameters:
         S3BucketName: !Ref S3BucketName
         S3KeyPrefix: !Ref S3KeyPrefix
-        SourceObjects: "TODO_REPLACE_ME_FUNCTIONS_LAMBDA_PATH"
+        SourceObjects: "lambda_functions/packages/GenRandom/lambda.zip"
