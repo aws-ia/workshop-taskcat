@@ -15,6 +15,7 @@ jobs:
       uses: peaceiris/actions-hugo@v2.2.3
       with:
         hugo-version: '0.58.3'
+        extended: true
 
     - name: Build
       run: hugo --gc --minify --cleanDestinationDir
