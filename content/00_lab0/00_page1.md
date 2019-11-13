@@ -1,7 +1,7 @@
 +++
 title = "Lab Enviornment"
 chapter = false
-weight = 10
+weight = 2
 +++
 
 

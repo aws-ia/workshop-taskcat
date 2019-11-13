@@ -1,7 +1,7 @@
 +++
 title = "Execute a taskcat test"
 chapter = false
-weight = 60
+weight = 27
 +++
 
 

@@ -1,7 +1,7 @@
 +++
-title = "Add a project section"
+title = "- Define project section"
 chapter = false
-weight = 30
+weight = 23
 +++
 
 

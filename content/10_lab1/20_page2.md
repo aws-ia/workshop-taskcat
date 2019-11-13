@@ -1,16 +1,24 @@
 +++
-title = "Build .taskcat.yml"
+title = "Add a (Project Level) config"
 chapter = false
-weight = 20
+weight = 22
 +++
 
 
-## What you will do in this lab: 
+### Project Config
+Ths config file provides project specific configuration.
 
-Open the **.taskcat.yml** in **lab_assets/start/lab1/cfn_project** 
+The project config file is located in the root of your project folder `<PROJECT_ROOT>/.taskcat.yml` 
 
-> Note scheme validation is plugged into vscode
+From the vscode file browser navigate to the **lab1/**,  
 
-![fig1.1](/10_lab1/images/fig_lab1.2.png)
+
+Open that **taskcat.yml** 
+
+>Double click on the file to open them in the ide tabs
+
+@TODO Screen shoot need updated to show appstream
+![fig1.1](/10_lab1/images/fig_lab1.1.png)
+
 
 

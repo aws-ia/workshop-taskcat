@@ -1,18 +1,10 @@
 +++
-title = "Add inputs to your test "
+title = "- Define parameters"
 chapter = false
-weight = 50
+weight = 26
 +++
 
-
-
 ## Add a parameter section to the test
-
-* define a test `mytest`
-
-* specfiy the name of your `template:` `lab1.template.yaml`
-
-* define the `region:` you want to test (for now just specifiy one) `us-east-1`
 
 * add the `parameters:` set the value of S3BucketName to `$[taskcat_autobucket]` This will evaulate to the bucket that taskcat creates during execution
 
