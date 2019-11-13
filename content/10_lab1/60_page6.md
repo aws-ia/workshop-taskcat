@@ -8,24 +8,22 @@ weight = 60
 
 ## Start a test
 
-
-From you vsode terminal change directory to you project root for lab1 (lab_assets/start/lab1/cfn-project)
+From you vsode terminal change directory to you project root for **lab1** __(lab_assets/start/lab1/cfn-project)__
 
 Under cfn-project you will see the following files
 ```
-.
+cfn-project
 ├── lambda_functions
-│   ├── packages
-│   │   └── GenRandom
-│   │       └── lambda.zip
-│   └── source
-│       └── GenRandom
-│           ├── Dockerfile
-│           ├── cfnresponse.py
-│           └── lambda_handler.py
-└── templates
-    └── lab1.template.yaml
-
-6 directories, 5 files
+├── templates
+└── .taskcat.yml
 
 ```
+
+From the **cfn-project** dir run you taskcat testa
+
+```
+taskcat test run
+```
+
+Expected output:
+![fig1.1](/10_lab1/images/taskcat_execution.gif)
