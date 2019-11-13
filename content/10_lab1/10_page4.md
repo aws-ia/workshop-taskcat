@@ -1,7 +1,7 @@
 +++
 title = "Defining tests"
 chapter = false
-weight = 24
+weight = 14
 +++
 
 

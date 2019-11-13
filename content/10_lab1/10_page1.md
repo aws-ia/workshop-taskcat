@@ -1,7 +1,7 @@
 +++
 title = "Taskcat config hierarchy"
 chapter = false
-weight = 20
+weight = 10
 +++
 
 

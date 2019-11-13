@@ -1,7 +1,7 @@
 +++
 title = "- Define parameters"
 chapter = false
-weight = 26
+weight = 16
 +++
 
 ## Add a parameter section to the test
