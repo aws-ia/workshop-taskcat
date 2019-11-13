@@ -1,5 +1,5 @@
 +++
-title = "Defining tests"
+title = "- Defining tests"
 chapter = false
 weight = 14
 +++
@@ -22,7 +22,3 @@ tests:
   mytest:
     template: templates/lab1.template.yaml
 ```
-
-
-
-
