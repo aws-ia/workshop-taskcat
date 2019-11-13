@@ -1,7 +1,7 @@
 +++
 title = "Prerequisites"
 chapter = true
-weight = 0
+weight = 1
 +++
 
 # Prerequisites for the Workshop
@@ -16,4 +16,4 @@ Open a webrowser and navigate to https://dashboard.eventengine.run/
 
 Enter the **Workshop-Hash** to proceed
 
-![fig0.1](00_lab0/images/fig0.1.png)
+![fig0.1](00_pre/images/fig0.1.png)
