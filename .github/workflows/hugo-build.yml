@@ -12,10 +12,7 @@ jobs:
     - uses: actions/checkout@master
 
     - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2.2.3
-      with:
-        hugo-version: '0.58.3'
-        extended: true
+      run:  HUGO_DEB="$(mktemp)" && wget -O $HUGO_DEB 'https://github.com/gohugoio/hugo/releases/download/v0.59.1/hugo_0.59.1_Linux-64bit.deb' &&  sudo dpkg -i $HUGO_DEB ; rm -f $HUGO_DEB
 
     - name: Build
       run: hugo --gc --minify --cleanDestinationDir
