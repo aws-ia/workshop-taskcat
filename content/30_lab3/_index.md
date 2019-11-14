@@ -4,22 +4,22 @@ chapter = false
 weight = 30
 +++
 
-### Testing in multiple region
+### Testing in multiple regions
 
-A important part of building high confidence cloudformation is multi region testing. 
+An important part of building high-confidence CloudFormation is multi-region testing.
 
-In this lab we will see how **taskcat** can help uncover common issue when deploying in multiple regional.
+In this lab, we will see how **taskcat** can help uncover common issues when deploying in multiple regions.
 
-In this lab we will use the same template which builds a lambda backed customer resource. 
+We'll start off by we will use the same template which builds a lambda backed customer resource.
 
-To test this template we will add 2 more regions to the test taskcat config.
+To test this template we will add 2 more regions to the test definition.
 
-- After running the test we will see that will **us-east-1** deploys properly we get failures in the other regions. Looking at the logs we can see that lambda source is not accessable from the other regions. 
+- After running the test, we will see that the **US-EAST-1** region deploys properly, while we _receive failures in other regions._
 
-- We will then make some modification to the template which correct this issue by adding a nested template which prestages the lambda source. 
+Looking at the logs we can see that lambda source is not accessible from the other regions.
 
-- Finally kick off out taskcat test again to validate the fix we implemented!
+- We will then modify the our template to include a child-stack. This child stack will pre-stage the lambda source in each region.
 
-> Hint: Consider cfn_project under **start/lab3** as the root of your Cloudformation project
+- Finally, we'll kick off our **taskcat** test again to validate the fix we implemented!
 
-
+> Hint: Consider cfn_project under **start/lab3** as the root of your CloudFormation project
