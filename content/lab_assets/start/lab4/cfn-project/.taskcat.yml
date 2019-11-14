@@ -1,0 +1,9 @@
+project:
+  name: taskcat-workshop-survey
+  template: templates/survey.template.yaml
+  parameters:
+    S3BucketName: "$[taskcat_autobucket]"
+  regions:
+    - "us-east-2"
+tests:
+  default: {}
