@@ -1,7 +1,7 @@
 +++
-title = "Lab 6"
+title = "Lab 4"
 chapter = false
-weight = 60
+weight = 40
 +++
 
 # What you will do in this lab:
