@@ -14,4 +14,4 @@ The CI/CD pipeline uses AWS Codepipeline and AWS Code Build services. AWS Codepi
 
 After you have set-up a CI/CD pipeline for your project, next time you push any changes to your git repository, it will trigger the pipeline. This will run the tests you have defined in your project configuration file, and on successfull test, the changes will be promoted from source branch to the target/release branch.
 
-So, let's get started with setting-up a CICD pipeline.
+So, let's get started.
