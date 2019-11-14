@@ -12,6 +12,7 @@ pygmentsCodeFences = true
 publishDir = "docs"
 RelativeURLs=true
 CanonifyURLs=true
+ignoreFiles = [ "lab_assets/*" ]
 
 
 [blackfriday]
