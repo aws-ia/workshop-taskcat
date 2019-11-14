@@ -1,8 +1,7 @@
 +++
-title = "Lab 6"
+title = "Bonus"
 chapter = false
 weight = 60
 +++
 
-### Lab 6 stub
-
+### Bonus
