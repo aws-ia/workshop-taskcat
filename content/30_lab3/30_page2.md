@@ -1,12 +1,38 @@
++++
+title = "Modify the template"
+chapter = false
+weight = 32
++++
+
+
+## Modify
+
+In VSCode, edit the `cfn_project/templates/lab3.template.yaml` file. We'll be adding the following snipplet to the _Resources_ section of the template.
+
+```
+CopyZipsTemplate:
+  Type: AWS::CloudFormation::Stack
+  Properties:
+    TemplateURL: !Sub "https://${S3BucketName}.${AWS::Region}.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
+    Parameters:
+      S3BucketName: !Ref S3BucketName
+      S3KeyPrefix: !Ref S3KeyPrefix
+      SourceObjects: "lambda_functions/packages/GenRandom/lambda.zip"
+```
+
+The full template should reflect the following:
+
+
+```
 AWSTemplateFormatVersion: 2010-09-09
 Parameters:
   S3BucketName:
     AllowedPattern: '^[0-9a-zA-Z]+([0-9a-zA-Z-]*[0-9a-zA-Z])*$'
     ConstraintDescription: >-
-      Quick Start bucket name can include numbers, lowercase letters, uppercase
+      Bucket name can include numbers, lowercase letters, uppercase
       letters, and hyphens (-). It cannot start or end with a hyphen (-).
     Description: >-
-      S3 bucket name for the Quick Start assets. Quick Start bucket name can
+      S3 bucket name for assets. Bucket name can
       include numbers, lowercase letters, uppercase letters, and hyphens (-). It
       cannot start or end with a hyphen (-).
     Type: String
@@ -14,17 +40,10 @@ Parameters:
     AllowedPattern: '^[0-9a-zA-Z-/]*$'
     ConstraintDescription: >-
       Can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slash (/).
-    Default: 'cfn-project'
+    Default: 'cfn-project/'
     Description: >-
-      S3 key prefix where assets are located should end withforward slash (/).
+      S3 key prefix where assets are located should end with forward slash (/).
     Type: String
-  LicenseToken:
-    Default: 'Provide you license key'
-    Description: This value is will be overriden using taskcat overrides
-    Type: String
-  AvailabilityZones:
-    Description: List of Availability Zones This value will be injected during runtime by $[taskcat_genaz_3] psuedo-parameters
-    Type: List<AWS::EC2::AvailabilityZone::Name>
 Resources:
   LambdaExecutionRole:
     Type: AWS::IAM::Role
@@ -67,7 +86,7 @@ Resources:
   CopyZipsTemplate:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub "https://${S3BucketName}.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
+      TemplateURL: !Sub "https://${S3BucketName}.${AWS::Region}.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
       Parameters:
         S3BucketName: !Ref S3BucketName
         S3KeyPrefix: !Ref S3KeyPrefix
@@ -82,3 +101,4 @@ Outputs:
   AvailabilityZones:
     Description:  AvailabilityZones injected via $[taskcat_genaz_3] psuedo-parameter
     Value:  !Join [ ',', !Ref 'AvailabilityZones' ]
+```
