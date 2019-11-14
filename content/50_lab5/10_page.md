@@ -1,7 +1,7 @@
 +++
 title = "Deploy CI/CD pipeline"
 chapter = false
-weight = 10
+weight = 51
 +++
 
 To setup a CICD pipeline for your project, you need the following details. Make a note of the following before proceeding with the rest of the steps: -

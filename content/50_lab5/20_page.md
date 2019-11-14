@@ -1,7 +1,7 @@
 +++
 title = "View test and code promotion"
 chapter = false
-weight = 20
+weight = 52
 +++
 
 Now, after your stack creation is completed successfully and you have a CICD pipeline setup, let's see what does the pipeline do.
