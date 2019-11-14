@@ -20,8 +20,11 @@ Parameters:
     Type: String
   LicenseToken:
     Default: 'Provide you license key'
-    Description: This value is will be overriden using taskcat overrides 
+    Description: This value is will be overriden using taskcat overrides
     Type: String
+  AvailabilityZones:
+    Description: List of Availability Zones This value will be injected during runtime by $[taskcat_genaz_3] psuedo-parameters 
+    Type: List<AWS::EC2::AvailabilityZone::Name>
 Resources:
   LambdaExecutionRole:
     Type: AWS::IAM::Role
@@ -63,4 +66,11 @@ Resources:
       Length: 12
 Outputs:
   GeneratedRandomString:
+    Description: Generated Random String
     Value: !GetAtt StringGenerator.RandomString
+  LicenseToken:
+    Description:  LicenseToken passed in via overrides
+    Value: !Ref LicenseToken
+  AvailabilityZones:
+    Description:  AvailabilityZones injected via $[taskcat_genaz_3] psuedo-parameter
+    Value:  !Join [ ',', !Ref 'AvailabilityZones' ]
