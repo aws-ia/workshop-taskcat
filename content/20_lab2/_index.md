@@ -14,4 +14,4 @@ The overrides feature can are used to pass input to the that you do not want in 
 The psuedo-parameters can be used to inject region specfic value (like AvailiblityZone KeyPairNames AccessCIDRs, etc)
 
 
-Hint: Consider cfn_project under lab2 as the root of your Cloudformation project
+Hint: Consider cfn_project under **start/lab2** as the root of your Cloudformation project

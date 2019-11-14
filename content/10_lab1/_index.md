@@ -9,5 +9,5 @@ weight = 10
 
 **Using the provided clouformation template build a taskcat config**
 
->Hint: Consider **cfn_project** as the root of your Cloudformation project
+>Hint: Consider **cfn_project** under **start/lab1** as the root of your Cloudformation project
 
