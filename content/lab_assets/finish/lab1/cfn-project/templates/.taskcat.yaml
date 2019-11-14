@@ -1,0 +1,10 @@
+project:
+  name: cfn-project
+tests:
+  mytest:
+    template: templates/lab1.template.yaml
+    regions:
+    - us-east-1
+    parameters: {}
+
+
