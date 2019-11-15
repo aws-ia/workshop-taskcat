@@ -32,7 +32,7 @@ After the pipeline execution is completed successfully, you should have all the 
 
 Go to your code commit repository by clicking the following link.
 
-[Code Commit repo](https://us-west-2.console.aws.amazon.com/codesuite/codecommit/repositories/quickstart-ci-repo/commits?region=us-west-2)
+[Code Commit repo](https://us-west-1.console.aws.amazon.com/codesuite/codecommit/repositories/quickstart-ci-repo/commits?region=us-west-1)
 
 Select the branch name from the top right corner, and you should see that your **master** branch has same commits as your **develop** branch.
 

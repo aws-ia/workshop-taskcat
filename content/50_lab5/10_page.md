@@ -6,20 +6,18 @@ weight = 52
 
 Now, it's time to setup a CICD pipeline for your project. To do that, go to your team's dasbhoard and make a note of the following values. You will need this to create the pipeline.
 
-1. Your AWS Code Commit **repository name**
-2. Your AWS Code Commit **repository Url** (https://)
-3. **Source branch name**, where you will be pushing your changes
-4. **Release branch name**, where your changes needs to be promoted, after successfull test
+- Your AWS Code Commit **repository name**
+- Your AWS Code Commit **repository Url** (https://)
 
 ### Launch stack
 To create a CICD pipeline, you will use a CloudFormation template. Click the following button to launch a stack creation for the CICD pipeline.
-[![launch-stack](/images/launch-stack.png?height=25px)](https://us-west-2.console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=CICD-TCatv9&templateURL=https://aws-quickstart.s3.amazonaws.com/quickstart-taskcat-ci/templates/taskcat-ci-pipeline.yaml.template)
+[![launch-stack](/images/launch-stack.png?height=25px)](https://us-west-1.console.aws.amazon.com/cloudformation/home?region=us-west-1#/stacks/new?stackName=CICD-TCatv9&templateURL=https://aws-quickstart.s3.amazonaws.com/quickstart-taskcat-ci/templates/taskcat-ci-pipeline.yaml.template)
 
 This will open a CloudFormation console in a new tab in your browser, with CloudFormation template S3 path pre-populated.
 
 ![template-url](/images/template-url.png)
 
-Click **Next**, and fill in the parameter values with the values you made a note of, earlier. Leave default values for **Quick Start S3 Bucket Name** and **Quick Start S3 Key Prefix** parameters.
+Click **Next**, and fill in the parameter values for **Repository name** and **Repository URL**. Leave rest of the parameter values, as default.
 
 After you have provided all the parameter values, click **Next**, and **Next** again.
 
