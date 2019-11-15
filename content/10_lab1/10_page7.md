@@ -8,7 +8,7 @@ weight = 18
 
 ## Start a test
 
-From the **cfn-project** dir run you taskcat testa
+From the **lab-1/cfn-project** dir run you taskcat test
 
 ```
 taskcat test run
