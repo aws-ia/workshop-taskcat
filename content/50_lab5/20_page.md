@@ -32,11 +32,11 @@ After the pipeline execution is completed successfully, you should have all the 
 
 Go to your code commit repository by clicking the following link.
 
-[Code Commit repo](https://us-west-1.console.aws.amazon.com/codesuite/codecommit/repositories/quickstart-ci-repo/commits?region=us-west-1)
+[Code Commit repo](https://us-west-2.console.aws.amazon.com/codesuite/codecommit/repositories/quiz-app/commits?region=us-west-2)
 
 Select the branch name from the top right corner, and you should see that your **master** branch has same commits as your **develop** branch.
 
-[TODO:Code commit repository]
+![select-branch](/images/select-branch.png)
 
 **Congratulations!!** You have successfully setup a CICD pipeliine for your CloudFormation project. 
 

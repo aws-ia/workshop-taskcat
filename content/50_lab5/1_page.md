@@ -8,7 +8,7 @@ To create a CICD pipeline for your project, you need a git repository. This repo
 
 For this lab, you will use AWS CodeCommit for your project's git repository. We have already pre-created a Code Commit repsoitory in your team's AWS Account. Click the following link to open the AWS CodeCommit console in a new tab of your browser.
 
-[**AWS CodeCommit repo**](https://us-west-1.console.aws.amazon.com/codesuite/codecommit/repositories/reinvent-taskcat-workshop-repo/browse?region=us-west-2)
+[**AWS CodeCommit repo**](https://us-west-2.console.aws.amazon.com/codesuite/codecommit/repositories/quiz-app/browse?region=us-west-2)
 
 ### Initialize Git
 

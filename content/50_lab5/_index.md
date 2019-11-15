@@ -8,7 +8,7 @@ weight = 50
 In this lab, you will learn how to do continuous integration of your CloudFormation templates, by creating a CI/CD pipeline for your project.
 
 Following diagram shows what you will deploy in this lab.
-[TODO:Architecture-diagram-of-CI/CD-pipeline]
+![architecture](/images/cicd-pipeline-arch.png)
 
 The CI/CD pipeline uses AWS Codepipeline and AWS Code Build services. AWS Codepipeline has a source action for AWS Code commit repository, and a build action uses AWS Code Build to run tests. The Code Build runs TaskCat to perform the tests, similar to how you run TaskCat locally on your laptop.
 
