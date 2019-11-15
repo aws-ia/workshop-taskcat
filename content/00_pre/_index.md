@@ -10,9 +10,9 @@ weight = 1
 
 ## What you will need to get started!
 
-You will be porovided taskcat **Workshop-Hash**: `b76bbe879be74e988678bb4a831365f3`
+You will be provided taskcat **Workshop-Hash**: `b76bbe879be74e988678bb4a831365f3`
 
-Open a webrowser and navigate to https://dashboard.eventengine.run/
+Open a web browser and navigate to https://dashboard.eventengine.run/
 
 Enter the **Workshop-Hash** to proceed
 

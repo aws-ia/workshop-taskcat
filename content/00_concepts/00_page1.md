@@ -1,18 +1,24 @@
 +++
-title = "Introduction"
+title = "Config hierarchy"
 chapter = false
-weight = 1
+weight = 3
 +++
 
-### What is taskcat?
-taskcat is a tool that tests AWS CloudFormation templates. It deploys your AWS CloudFormation template in multiple AWS Regions and generates a report with a pass/fail grade for each region. You can specify the regions and number of Availability Zones you want to include in the test, and pass in parameter values from your AWS CloudFormation template. taskcat is implemented as a Python class that you import, instantiate, and run.
 
-taskcat was developed by the AWS QuickStart team to test AWS CloudFormation templates that automatically deploy workloads on AWS. We’re pleased to make the tool available to all developers who want to validate their custom AWS CloudFormation templates across AWS Regions
+Taskcat uses two config files: _**Global config**_  and _**Project config**_
 
+### Project Config
+This config file provides project-specific configurations.
 
-### Concepts we will cover in this section
-#### Config hierarchy
-#### Project Config
-#### Global config
-#### Parameter Overrides
-#### (Psuedo) Parameters
+The project config file is located in the root of your project folder _`<PROJECT_ROOT>/.taskcat.yml`_
+
+Since each lab uses the `cfn-project` directory as the _project root_, this is where our project-specific taskcat config file will reside.
+
+### Global config
+This config file provides global settings that become defaults for **all projects**.
+
+The global config file is located in user's home-directory.  _`~/.taskcat.yml`_
+
+_***Note: The project-level configuration takes precedence over any items in the global config.***_
+__***However, Global parameters take precedence over project-level parameters. See the next section for more details.***__
+
