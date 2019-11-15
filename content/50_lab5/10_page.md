@@ -1,10 +1,10 @@
 +++
 title = "Deploy CI/CD pipeline"
 chapter = false
-weight = 51
+weight = 52
 +++
 
-To setup a CICD pipeline for your project, you need the following details. Make a note of the following before proceeding with the rest of the steps: -
+Now, it's time to setup a CICD pipeline for your project. To do that, go to your team's dasbhoard and make a note of the following values. You will need this to create the pipeline.
 
 1. Your AWS Code Commit **repository name**
 2. Your AWS Code Commit **repository Url** (https://)
