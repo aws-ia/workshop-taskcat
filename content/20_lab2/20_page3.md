@@ -5,22 +5,19 @@ weight = 23
 +++
 
 
-## Test Results
+## Login to the AWS Console
 
-After the test completes you will see a new folder under `cfn-project` called **taskcat_outputs**
-```
-cfn-project
-├── lambda_functions
-├── templates
-├── .taskcat.yml
-└── taskcat_outputs/index.html < - (report)
+1. from the [Event Engine dashboard](https://dashboard.eventengine.run/) click login to AWS console
+2. navigate to the CloudFormation console in us-east-1 (N. Virginia)
+3. Change the filter to view **Deleted** stacks
+3. Select the top stack ( they are ordered by creation date)
+4. Click on the **"Outputs"** tab
 
-```
+Notice that the values for the **LicenseToken** parameter has been replaced with the value 
+specified in the global override.
 
-open `taskcat_outputs/index.html` in the your web browser
-![fig1.3](/10_lab1/images/fig_lab1.3.png)
-
-To see the test logs click the **View Logs** link
+Notice that the value for **AvailablityZones** has been replaced with 2 az names from the 
+us-east-1 region
 
 
 @TODO: MORE SCREENSHOTS OF TEMPLATE OUTPUTS
