@@ -11,10 +11,11 @@ We will use override to inject a `LicenseToken` and dynamically inject `Availibl
 values during testing
 
 - Use taskcat overrides pass inputs into the stack that you do not want in the 
-project_root/gitrepo _(secrets like `LicenseKeys` or `APITokens`, etc)_
+project_root/gitrepo _(secrets like `LicenseKeys` or `APITokens`, etc. Or account specific 
+values like EC2 KeyPair names, or Rooute53 domain names)_
 
-- Use the **psuedo-parameters** can be used to inject region specfic value _(like 
-`AvailiblityZones` `KeyPairNames` `AccessCIDRs`, etc)_
+- **psuedo-parameters** can be used to inject dynamic values _(like 
+a defined number of Availability Zones for a particular region, random strings, or S3 bucket names)_
 
 
 To get started navigate to the lab2/cfn-project folder in your IDE.

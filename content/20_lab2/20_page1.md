@@ -11,7 +11,7 @@ weight = 21
 
 * Example project config file:
 
-```
+```yaml
 project:
   name: cfn-project
 tests:
@@ -39,7 +39,7 @@ open-taskcat-global-config
 
 * Example global config file:
 
-```
+```yaml
 general:
   parameters:
     LicenseToken: 're:invent-2019-is-awesome'
