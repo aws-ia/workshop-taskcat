@@ -53,7 +53,7 @@ Resources:
         S3Bucket: !Ref 'S3BucketName'
         S3Key: !Sub '${S3KeyPrefix}lambda_functions/packages/GenRandom/lambda.zip'
   StringGenerator:
-    Type: Custom::RandomString
+    Type: AWS::CloudFormation::CustomResource
     Properties:
       ServiceToken: !GetAtt GenRandomLambda.Arn
       Length: 12

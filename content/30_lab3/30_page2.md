@@ -5,35 +5,43 @@ weight = 32
 +++
 
 
-## Modify
+## Making our template multi-region
+There are multiple potential strategies to deal with resources that require the content
+in S3 to be in the same region as the stack. In this example we will add a resource to 
+the stack that copies the Lambda zip from the bucket in us-east-1 to the stack region 
+before creating the lambda.
 
-* In VSCode, edit the `cfn_project/templates/lab3.template.yaml` file. We'll be adding the following snipplet to the _Resources_ section of the template.
+* In VSCode, edit the `cfn_project/templates/lab3.template.yaml` file. We'll be adding 
+the following snippet to the _Resources_ section of the template.
 
+```yaml
+  CopyZipsTemplate:
+    Type: AWS::CloudFormation::Stack
+    Properties:
+      TemplateURL: !Sub "https://${S3BucketName}.${AWS::Region}.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
+      Parameters:
+        S3BucketName: !Ref S3BucketName
+        S3KeyPrefix: !Ref S3KeyPrefix
+        SourceObjects: "lambda_functions/packages/GenRandom/lambda.zip"
 ```
-CopyZipsTemplate:
-      Type: AWS::CloudFormation::Stack
-      Properties:
-        TemplateURL: !Sub "https://${S3BucketName}.${AWS::Region}.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
-        Parameters:
-          S3BucketName: !Ref S3BucketName
-          S3KeyPrefix: !Ref S3KeyPrefix
-          SourceObjects: "lambda_functions/packages/GenRandom/lambda.zip"
-```
 
-* We're also modifying the `GenRandomLambda` resource to use a template output from our `CopyZipsStack`.
+This child stack contains a Lambda backed custom resource that takes the SourceObjects 
+passed in and copies it to a new bucket in the same region as the stack. The outputs 
+return the name of the new bucket, that we will use in the Code property of our 
+**GenRandomLambda** resource.
 
-```
-GenRandomLambda:
-      Type: AWS::Lambda::Function
-      Properties:
-        Description: Lambda creates simple random string
-        Handler: lambda_function.handler
-        Runtime: python3.7
-        Role: !GetAtt 'LambdaExecutionRole.Arn'
-        Timeout: 300
-        Code:
-          S3Bucket: !GetAtt 'CopyZipsTemplate.Outputs.LambdaZipsBucket'
-          S3Key: !Sub '${S3KeyPrefix}lambda_functions/packages/GenRandom/lambda.zip'
+```yaml
+  GenRandomLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Description: Lambda creates simple random string
+      Handler: lambda_function.handler
+      Runtime: python3.7
+      Role: !GetAtt 'LambdaExecutionRole.Arn'
+      Timeout: 300
+      Code:
+        S3Bucket: !GetAtt 'CopyZipsTemplate.Outputs.LambdaZipsBucket'
+        S3Key: !Sub '${S3KeyPrefix}lambda_functions/packages/GenRandom/lambda.zip'
 ```
 
 The full template should reflect the following:

@@ -14,9 +14,9 @@ Parameters:
     AllowedPattern: '^[0-9a-zA-Z-/]*$'
     ConstraintDescription: >-
       Can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slash (/).
-    Default: 'cfn-project'
+    Default: 'cfn-project/'
     Description: >-
-      S3 key prefix where assets are located should end withforward slash (/).
+      S3 key prefix where assets are located should end with a forward slash (/).
     Type: String
   LicenseToken:
     Default: 'Provide you license key'
@@ -60,7 +60,7 @@ Resources:
         S3Bucket: !Ref 'S3BucketName'
         S3Key: !Sub '${S3KeyPrefix}lambda_functions/packages/GenRandom/lambda.zip'
   StringGenerator:
-    Type: Custom::RandomString
+    Type: AWS::CloudFormation::CustomResource
     Properties:
       ServiceToken: !GetAtt GenRandomLambda.Arn
       Length: 12
@@ -72,5 +72,5 @@ Outputs:
     Description:  LicenseToken passed in via overrides
     Value: !Ref LicenseToken
   AvailabilityZones:
-    Description:  AvailabilityZones injected via $[taskcat_genaz_3] psuedo-parameter
+    Description:  AvailabilityZones injected via $[taskcat_genaz_2] psuedo-parameter
     Value:  !Join [ ',', !Ref 'AvailabilityZones' ]
