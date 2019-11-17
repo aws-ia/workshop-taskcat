@@ -11,6 +11,7 @@ The AWS Appstream seesion that you are using for this hands on lab has the follo
 
 - Python3 (taskcat is Python program)
 - taskcat (pip install taskcat)
-- Docker  (Used for lambda packaging)
-- Vscode  (With taskcat schemea validation enabled)
-
+- Vscode with plugins pre-installed 
+  - taskcat config validation
+  - cfn-lint validation
+  - CloudFormation template auto-complete and doc links from the cfn-resource-spec

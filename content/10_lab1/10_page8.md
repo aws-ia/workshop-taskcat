@@ -23,7 +23,17 @@ The provided template for lab1 uses lambda backed custom resource.
 
 **source/GenRandom** contains the lambda source. 
 
-When lambda source is detected taskcat will spin up a docker container and build the lambda zip file and then save it to lambda_functions/packages/ This zip file is referenced in our lambda function
+When lambda source is detected taskcat will package the lambda zip file and then save it 
+to lambda_functions/packages/. This zip file is referenced in our lambda function.
+
+> Note: The default source and package folders can be changed by setting values in your 
+> project_config file.
+
+> Note: taskcat is able to build dependencies for your lambda so that you don't need to 
+> check them into source control. This can be done by providing a Dockerfile  that 
+> contains the in the build steps in source folder. Or, for python functions, if a 
+> requirements.txt file is found, taskcat will package the dependencies defined in it 
+> into your zip.
 
 ```
   GenRandomLambda:
@@ -41,7 +51,8 @@ When lambda source is detected taskcat will spin up a docker container and build
 
 If you want to run packaging step on its own you can run `taskcat package`
 
-This is _optional_, In the next step we will execute the taskcat test which will run packaging prior to test execution
+This is _optional_, In the next step we will execute the taskcat test which will run 
+packaging prior to test execution.
 
 
 

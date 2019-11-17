@@ -17,7 +17,13 @@ cfn-project
 
 ```
 
-open `taskcat_outputs/index.html` in the your web browser
+To open `taskcat_outputs/index.html` in the AppStream browser, we've provided a simple 
+shortcut that can be executed from the terminal:
+
+```
+open-taskcat-report
+```
+
 ![fig1.3](/10_lab1/images/fig_lab1.3.png)
 
 To see the test logs click the **View Logs** link

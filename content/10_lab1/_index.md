@@ -7,7 +7,8 @@ weight = 10
 
 ## What you will do in this lab: 
 
-**Using the provided clouformation template build a taskcat config**
+**We'll build a basic taskcat config and then, using the provided clouformation template 
+we will launch a test**
 
->Hint: Consider **cfn_project** under **start/lab1** as the root of your Cloudformation project
+To get started, navigate to the `lab1/cfn-project` folder in your IDE.
 
