@@ -22,3 +22,6 @@ defined in your project configuration file, and on a successfull test, the chang
 be promoted from source branch to the target/release branch.
 
 So, let's get started.
+
+To get started, navigate to the `lab5/cfn-project` folder in your IDE.
+

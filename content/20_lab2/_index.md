@@ -18,4 +18,4 @@ values like EC2 KeyPair names, or Rooute53 domain names)_
 a defined number of Availability Zones for a particular region, random strings, or S3 bucket names)_
 
 
-To get started navigate to the lab2/cfn-project folder in your IDE.
+To get started navigate to the `lab2/cfn-project` folder in your IDE.

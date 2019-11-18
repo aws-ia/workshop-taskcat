@@ -22,4 +22,4 @@ Looking at the logs we can see that lambda source is not accessible from the oth
 
 - Finally, we'll kick off our **taskcat** test again to validate the fix we implemented!
 
-To get started navigate to the lab3/cfn-project folder in your IDE.
+To get started navigate to the `lab3/cfn-project` folder in your IDE.
