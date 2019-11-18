@@ -1,0 +1,403 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  NewAccount:
+    Type: String
+    Default: "true"
+    AllowedValues:
+      - "true"
+      - "false"
+  EEKeyPair:
+    Type: String
+    Default: ""
+Conditions:
+  CreateInstance: !Equals [ !Ref NewAccount, "true" ]
+Resources:
+  AppStreamFleet:
+    DependsOn: AppStreamServiceRole
+    Type: AWS::AppStream::Fleet
+    Metadata:
+      PseudoDepends: !If [CreateInstance, !Ref Instancer, !Ref "AWS::NoValue"]
+    Properties:
+      Name: VSCodeFleet
+      ComputeCapacity: 
+        DesiredInstances: 1
+      DisconnectTimeoutInSeconds: 360000
+      DisplayName: Taskcat Workshop - preconfigured IDE
+      InstanceType: stream.standard.large
+      EnableDefaultInternetAccess: true
+      FleetType: ALWAYS_ON
+      ImageArn: !Ref AppStreamGetImage
+      MaxUserDurationInSeconds: 360000
+      VpcConfig:
+        SecurityGroupIds:
+          - !GetAtt VpcInfo.SecurityGroup
+        SubnetIds:
+          - !GetAtt VpcInfo.Subnet1
+          - !GetAtt VpcInfo.Subnet2
+  AppStreamStack:
+    DependsOn: AppStreamServiceRole
+    Metadata:
+      PseudoDepends: !If [CreateInstance, !Ref Instancer, !Ref "AWS::NoValue"]
+    Type: AWS::AppStream::Stack
+    Properties:
+      Name: VSCodeStack
+      RedirectURL: https://aws-quickstart.github.io/taskcat/
+      FeedbackURL: https://github.com/aws-quickstart/taskcat/issues/new/choose
+      Description: VSCode with cfn-lint, yaml schema and taskcat
+      DisplayName: Taskcat Workshop - preconfigured IDE
+      ApplicationSettings:
+        Enabled: false
+      UserSettings:
+        - Action: PRINTING_TO_LOCAL_DEVICE
+          Permission: DISABLED
+        - Action: FILE_UPLOAD
+          Permission: ENABLED
+        - Action: FILE_DOWNLOAD
+          Permission: ENABLED
+        - Action: CLIPBOARD_COPY_TO_LOCAL_DEVICE
+          Permission: ENABLED
+        - Action: CLIPBOARD_COPY_FROM_LOCAL_DEVICE
+          Permission: ENABLED
+      StorageConnectors:
+        - ConnectorType: HOMEFOLDERS
+          ResourceIdentifier: TaskcatWorkshop
+  AppStreamAssoc:
+    Type: AWS::AppStream::StackFleetAssociation
+    Properties:
+      FleetName: !Ref AppStreamFleet
+      StackName: !Ref AppStreamStack
+  AppStreamInstanceRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: ['sts:AssumeRole']
+            Effect: Allow
+            Principal:
+              Service: [appstream.amazonaws.com]
+        Version: '2012-10-17'
+      Path: /
+      ManagedPolicyArns: ["arn:aws:iam::aws:policy/AdministratorAccess"]
+  LambdaRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Statement:
+          - Action: ['sts:AssumeRole']
+            Effect: Allow
+            Principal:
+              Service: [lambda.amazonaws.com]
+        Version: '2012-10-17'
+      Path: /
+      Policies:
+        - PolicyName: LambdaRole
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Action:
+                - 'logs:CreateLogGroup'
+                - 'logs:CreateLogStream'
+                - 'logs:PutLogEvents'
+                Effect: Allow
+                Resource: "arn:aws:logs:*:*:*"
+              - Action:
+                - 'ec2:DescribeVpcs'
+                - 'ec2:DescribeSubnets'
+                - 'ec2:DescribeSecurityGroups'
+                - 'ec2:RunInstances'
+                - 'ec2:TerminateInstances'
+                - 'iam:CreateRole'
+                - 'iam:AttachRolePolicy'
+                - 'appstream:StartFleet'
+                - 'appstream:StopFleet'
+                - 'appstream:UpdateFleet'
+                - 'appstream:CreateStreamingUrl'
+                - 'appstream:DescribeFleets'
+                - 'iam:CreateServiceSpecificCredential'
+                - 'iam:DeleteServiceSpecificCredential'
+                - 'iam:PassRole'
+                Effect: Allow
+                Resource: "*"
+  AppStreamGetImageLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Role: !GetAtt LambdaRole.Arn
+      Runtime: python3.7
+      Timeout: 900
+      Code:
+        ZipFile: !Sub |
+          import cfnresponse
+          import traceback
+          from botocore.vendored import requests
+
+          region = "${AWS::Region}"
+          url = "http://share-appstream-image-591371385.us-west-2.elb.amazonaws.com:8099"
+          image_arn = f"arn:aws:appstream:{region}:421940136121:image/vscode0.10"
+
+          def handler(event, context):
+              print(event)
+              status = cfnresponse.SUCCESS
+              try:
+                  if event.get("RequestType") == "Create":
+                      r = requests.post(url, json={"account_id": "${AWS::AccountId}", "region": region})
+                      print(r.json())
+                      if r.status_code != 200:
+                          cfnresponse.send(event, context, cfnresponse.FAILED, {}, image_arn)
+                  if event.get("RequestType") == "Delete":
+                    r = requests.post(url, json={"account_id": "${AWS::AccountId}", "unshare": "yup", "region": region})
+                    print(r.json())
+              except Exception:
+                  traceback.print_exc()
+                  status = cfnresponse.FAILED
+              cfnresponse.send(event, context, status, {}, image_arn)
+  GetDefaultVpcSubnetsLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Role: !GetAtt LambdaRole.Arn
+      Runtime: python3.7
+      Code:
+        ZipFile: !Sub |
+          import cfnresponse
+          import traceback
+          import boto3
+
+          region = "${AWS::Region}"
+          az_ids = {"us-west-2": ["usw2-az1", "usw2-az2", "usw2-az3"], "us-east-1": ["use1-az1", "use1-az2", "use1-az3", "use1-az4", "use1-az5", "use1-az6"]}
+          def handler(event, context):
+              print(event)
+              status = cfnresponse.SUCCESS
+              response_data = {}
+              if event.get("RequestType") != "Delete":
+                  try:
+                      ec2 = boto3.client("ec2")
+                      vpc_id = ec2.describe_vpcs(Filters=[{"Name": "isDefault", "Values": ["true"]}])["Vpcs"][0]["VpcId"]
+                      subnet1, subnet2 = (subnet["SubnetId"] for subnet in ec2.describe_subnets(Filters=[
+                          {"Name": "vpc-id", "Values": [vpc_id]}, 
+                          {"Name": "availability-zone-id", "Values": az_ids[region]}
+                      ])["Subnets"][:2])
+                      sec_group = ec2.describe_security_groups(Filters=[
+                          {"Name": "vpc-id", "Values": [vpc_id]}, 
+                          {"Name": "group-name", "Values": ["default"]}
+                      ])["SecurityGroups"][0]["GroupId"]
+                      response_data = {"SecurityGroup": sec_group, "Subnet1": subnet1, "Subnet2": subnet2, "VpcId": vpc_id}
+                  except Exception:
+                      traceback.print_exc()
+                      status = cfnresponse.FAILED
+              cfnresponse.send(event, context, status, response_data)
+  ServiceLinkedRoleLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Role: !GetAtt LambdaRole.Arn
+      Runtime: python3.7
+      Timeout: 900
+      Code:
+        ZipFile: |
+          import cfnresponse
+          import traceback
+          import boto3
+
+          trust_policy = """{
+            "Version": "2012-10-17",
+            "Statement": [
+              {
+                "Effect": "Allow",
+                "Principal": {
+                "Service": "appstream.amazonaws.com"
+              },
+              "Action": "sts:AssumeRole"
+              }
+            ]
+          }"""
+
+          def handler(event, context):
+              print(event)
+              status = cfnresponse.SUCCESS
+              if event.get("RequestType") == "Create":
+                  try:
+                      iam = boto3.client("iam")
+                      try:
+                          iam.create_role(Path='/service-role/', RoleName='AmazonAppStreamServiceAccess', AssumeRolePolicyDocument=trust_policy)
+                      except iam.exceptions.EntityAlreadyExistsException:
+                          pass
+                      iam.attach_role_policy(RoleName='AmazonAppStreamServiceAccess', PolicyArn='arn:aws:iam::aws:policy/service-role/AmazonAppStreamServiceAccess')
+                  except Exception:
+                      traceback.print_exc()
+                      status = cfnresponse.FAILED
+              cfnresponse.send(event, context, status, {})
+  StartFleetLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: lambda_function.handler
+      Role: !GetAtt LambdaRole.Arn
+      Runtime: python3.7
+      Timeout: 900
+      Code: 
+        S3Bucket: !Sub "ee-assets-prod-${AWS::Region}"
+        S3Key: modules/2f0cd812fad94f7c9a284f6fe7d2e96f/v1/StartFleet.zip
+  GenerateUrlLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Role: !GetAtt LambdaRole.Arn
+      Runtime: python3.7
+      Timeout: 900
+      Code: 
+        ZipFile: |
+          import cfnresponse
+          import traceback
+          import boto3
+          from time import sleep
+
+          def handler(event, context):
+              print(event)
+              status = cfnresponse.SUCCESS
+              try:
+                  resp = {}
+                  appstream = boto3.client("appstream")
+                  if event.get("RequestType") == "Create":
+                      while context.get_remaining_time_in_millis() / 1000 > 40:
+                          if appstream.describe_fleets(Names=["VSCodeFleet"])['Fleets'][0]['State'] == 'RUNNING':
+                              break
+                          sleep(30)
+                      resp["Url"] = appstream.create_streaming_url(
+                          StackName='VSCodeStack', FleetName='VSCodeFleet', UserId='attendee0',
+                          ApplicationId='VSCode', Validity=172800)['StreamingURL']
+              except Exception:
+                  traceback.print_exc()
+                  status = cfnresponse.FAILED
+              cfnresponse.send(event, context, status, resp)
+  InstanceLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Role: !GetAtt LambdaRole.Arn
+      Runtime: python3.7
+      Timeout: 900
+      Code: 
+        ZipFile: |
+          import cfnresponse
+          import traceback
+          import boto3
+          from botocore.exceptions import ClientError
+          from time import sleep
+          
+          def handler(event, context):
+              print(event)
+              status = cfnresponse.SUCCESS
+              try:
+                  if event.get("RequestType") == "Create":
+                      ec2 = boto3.client("ec2", region_name="eu-west-1")
+                      retries=0
+                      while True:
+                          try:
+                              resp = ec2.run_instances(ImageId='ami-0ce71448843cb18a1', MinCount=1, MaxCount=1, InstanceType='t3.micro')
+                              break
+                          except ClientError as e:
+                              if "No subnets found for the default VPC" not in str(e) or retries > 12:
+                                  raise
+                              retries += 1
+                              sleep(5)
+                      while context.get_remaining_time_in_millis() / 1000 > 15:
+                          sleep(5)
+                      ec2.terminate_instances(InstanceIds=[resp['Instances'][0]['InstanceId']])
+              except Exception:
+                  traceback.print_exc()
+                  status = cfnresponse.FAILED
+              cfnresponse.send(event, context, status, {})
+  AppStreamGetImage:
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      ServiceToken: !GetAtt AppStreamGetImageLambda.Arn
+  VpcInfo:
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      ServiceToken: !GetAtt GetDefaultVpcSubnetsLambda.Arn
+  StartFleet:
+    DependsOn: AppStreamFleet
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      ServiceToken: !GetAtt StartFleetLambda.Arn
+      IamRoleArn: !GetAtt AppStreamInstanceRole.Arn
+  AppStreamServiceRole:
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      ServiceToken: !GetAtt ServiceLinkedRoleLambda.Arn
+  GenerateUrl:
+    DependsOn: StartFleet
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      ServiceToken: !GetAtt GenerateUrlLambda.Arn
+  Instancer:
+    Condition: CreateInstance
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      ServiceToken: !GetAtt InstanceLambda.Arn
+  CodeCommitRepo:
+    Type: AWS::CodeCommit::Repository
+    Properties:
+      RepositoryName: "quiz-app"
+  CodeCommitUser:
+    Type: AWS::IAM::User
+    Properties:
+      Policies:
+        - PolicyName: GitAccess
+          PolicyDocument:
+            Version: "2012-10-17"
+            Statement:
+              - Sid: GitAccess
+                Effect: Allow
+                Action: ["codecommit:GitPull", "codecommit:GitPush"]
+                Resource: "*"
+  CodeCommitCredsLambda:
+    Type: AWS::Lambda::Function
+    Properties:
+      Handler: index.handler
+      Role: !GetAtt LambdaRole.Arn
+      Runtime: python3.7
+      Timeout: 900
+      Code:
+        ZipFile: !Sub |
+          import cfnresponse
+          import traceback
+          import boto3
+
+          def handler(event, context):
+              print(event)
+              status = cfnresponse.SUCCESS
+              data = {}
+              pid = event.get("PhysicalResourceId")
+              try:
+                  iam = boto3.client("iam")
+                  if event["RequestType"] == "Create":
+                      creds = iam.create_service_specific_credential(
+                          UserName="${CodeCommitUser}",
+                          ServiceName="codecommit.amazonaws.com"
+                      )['ServiceSpecificCredential']
+                      data["UserName"] = creds["ServiceUserName"]
+                      data["Password"] = creds["ServicePassword"]
+                      pid = creds["ServiceSpecificCredentialId"]
+                  if event["RequestType"] == "Delete":
+                      iam.delete_service_specific_credential(
+                          UserName="${CodeCommitUser}",
+                          ServiceSpecificCredentialId=event["PhysicalResourceId"]
+                      )
+              except Exception:
+                  traceback.print_exc()
+                  status = cfnresponse.FAILED
+              cfnresponse.send(event, context, status, data, pid)
+  CodeCommitCreds:
+    Type: AWS::CloudFormation::CustomResource
+    Properties:
+      ServiceToken: !GetAtt CodeCommitCredsLambda.Arn
+Outputs:
+  StreamingUrl: 
+    Value: !GetAtt GenerateUrl.Url
+  CodeCommitUrl:
+    Value: !GetAtt CodeCommitRepo.CloneUrlHttp
+  CodeCommitUser:
+    Value: !GetAtt CodeCommitCreds.UserName
+  CodeCommitPassword:
+    Value: !GetAtt CodeCommitCreds.Password
