@@ -1,58 +1,22 @@
 +++
-title = "Add additional regions & test"
+title = "Run test with no-delete"
 chapter = false
-weight = 41
+weight = 42
 +++
 
-## Add more regions
 
-* Edit your `lab3/cfn_project/.taskcat.yml` parameters to include additional regions.
+## Execute the test. 
 
-* Example project config file:
-
-```
-project:
-      name: cfn-project
-tests:
-      mytest:
-        template: templates/lab3.template.yaml
-        regions:
-        - us-east-1
-        - us-east-2
-        - us-west-1
-        parameters:
-          S3BucketName: '$[taskcat_autobucket]'
-          S3KeyPrefix: 'cfn-project/'
-          LicenseToken: 'MY-FAKE-LICENSE-KEY'
-          AvailabilityZones: $[taskcat_genaz_2]
+* Run **taskcat test run --no-delete** or **-n** flag to retain the CloudFormation stack 
 
 ```
-
-## Test the new regions
-
-```
-taskcat test run
+taskcat test run --no-delete
 ```
 
-## Test Results
+### Launch the application after deployment.
 
-After the test completes you will see a new folder under `cfn-project` called **taskcat_outputs**
-```
-cfn-project
-├── lambda_functions
-├── templates
-├── .taskcat.yml
-└── taskcat_outputs/index.html < - (report)
-
-```
-
-open `taskcat_outputs/index.html` in the your web browser
-![fig1.3](/10_lab1/images/fig_lab1.3.png)
-
-To see the test logs click the **View Logs** link
+* Once the taskcat test completes, navigate to the CloudFormation console by clicking...
 
 
-@TODO: SCREENSHOT OF A FAILURE (INDEX)
 
-
-@TODO: SCREENSHOT OF SPECIFIC LAMBDA S3 ERROR (IN CFN LOG OUTPUT)
+**Complete the survey**

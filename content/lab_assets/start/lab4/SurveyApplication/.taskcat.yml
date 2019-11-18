@@ -1,9 +1,0 @@
-project:
-  name: taskcat-team-template
-  regions:
-    - us-west-2
-  template: team.template.yaml
-tests:
-  default:
-    parameters:
-      NewAccount: "true"
