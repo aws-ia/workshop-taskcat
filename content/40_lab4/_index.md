@@ -14,6 +14,6 @@ taskcat not to delete the stack at completion using it as a test deployment tool
 
 ## Execute the test.
 
-In this lab, we'll use taskcat's **--no-delete** using this flag will retain the CloudFormation stack after the test is complete.
+In this lab, we'll use taskcat's **--no-delete** flag, which will retain the CloudFormation stack after the test is complete.
 
-To get started, navigate to the `lab4/cfn-project` folder in
+To get started, navigate to the `lab4/cfn-project` folder in your IDE

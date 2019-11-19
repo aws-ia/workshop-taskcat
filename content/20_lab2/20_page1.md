@@ -23,7 +23,7 @@ tests:
       S3BucketName: '$[taskcat_autobucket]'
       S3KeyPrefix: 'cfn-project/'
       LicenseToken: 'value-to-be-overriden-by-global-config'
-      AvailablityZones: $[taskcat_genaz_2]
+      AvailabilityZones: '$[taskcat_genaz_2]'
 ```
 
 ## Add Psuedo-parameters to your global taskcat config.
