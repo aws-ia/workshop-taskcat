@@ -17,6 +17,8 @@ taskcat test run --no-delete
 
 * Once the taskcat test completes, navigate to the CloudFormation console by clicking...
 
+$TODO
+add link to CloudFormation console
 
 **Complete the survey**
 @TODO 

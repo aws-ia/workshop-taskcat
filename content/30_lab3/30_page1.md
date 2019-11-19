@@ -24,7 +24,7 @@ tests:
           S3BucketName: '$[taskcat_autobucket]'
           S3KeyPrefix: 'cfn-project/'
           LicenseToken: 'MY-FAKE-LICENSE-KEY'
-          AvailabilityZones: $[taskcat_genaz_2]
+          AvailabilityZones: '$[taskcat_genaz_2]'
 
 ```
 

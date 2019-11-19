@@ -20,8 +20,8 @@ For now only specifiy one region `us-east-1`
 tests:
   mytest:
     template: templates/lab1.template.yaml
-        regions:
-        - us-east-1
+    regions:
+    - us-east-1
 ```
 
 
