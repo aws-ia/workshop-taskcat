@@ -16,7 +16,7 @@ Parameters:
       Can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slash (/).
     Default: 'cfn-project/'
     Description: >-
-      S3 key prefix where assets are located should end withforward slash (/).
+      S3 key prefix where assets are located should end with a forward slash (/).
     Type: String
   LicenseToken:
     Default: 'Provide you license key'
@@ -57,7 +57,7 @@ Resources:
       Role: !GetAtt 'LambdaExecutionRole.Arn'
       Timeout: 300
       Code:
-        S3Bucket: !GetAtt 'CopyZipsTemplate.Outputs.LambdaZipsBucket'
+        S3Bucket: !Ref 'S3BucketName'
         S3Key: !Sub '${S3KeyPrefix}lambda_functions/packages/GenRandom/lambda.zip'
   StringGenerator:
     Type: AWS::CloudFormation::CustomResource
