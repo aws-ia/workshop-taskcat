@@ -13,12 +13,16 @@ want to include in the test, and pass in parameter values from your AWS CloudFor
 template. taskcat is implemented as a cli and a Python class that you can use in your 
 own applications.
 
-taskcat was developed by the AWS QuickStart team to test AWS CloudFormation templates 
+taskcat was developed by the [AWS Quick Start](https://aws.amazon.com/quickstart/) team to test AWS CloudFormation templates 
 that automatically deploy workloads on AWS. We’re pleased to make the tool available to 
 all developers who want to validate their custom AWS CloudFormation templates across AWS 
 Regions
 
-#### taskcat concepts and features we will cover in this lab
+#### Concepts and features
+
+We will cover following concepts and features of taskcat in this workshop:
+
+#TODO - instead of listing features, we should explain what each feature is about. 
 
 - Config hierarchy
 - Project config

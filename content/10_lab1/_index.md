@@ -5,10 +5,18 @@ weight = 10
 +++
 
 
-## What you will do in this lab: 
+## Objective
 
-**We'll build a basic taskcat config and then, using the provided clouformation template 
-we will launch a test**
+In this lab, you will learn how you can use taskcat to test your cloudformation templates in an AWS region.
+
+## What will you do?
+
+First step to use Taskcat is to create a config file where you define various details about your CloudFormation project such as project name, Cloudformation template you want to test, AWS regions where you want to test your templates, etc.
+
+So, in this lab, you will:
+
+- Create a config file
+- Launch a test
 
 To get started, navigate to the `lab1/cfn-project` folder in your IDE.
 
