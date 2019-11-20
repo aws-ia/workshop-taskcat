@@ -25,7 +25,7 @@ The appstream also provides a tool in the top left of the window that enables pl
 data into the AppStream session's clipboard. This is recommended for pasting large 
 blocks of text.
 
-### MACOS
+### MAC OS
 
 On Mac OS the function of the Command key is swapped with that of the Control key, so
 to copy/paste in the appstream environment the shortcuts are control-c and control-v 
