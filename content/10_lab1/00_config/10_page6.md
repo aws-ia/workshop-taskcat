@@ -1,5 +1,5 @@
 +++
-title = "- Define parameters"
+title = "Define parameters"
 chapter = false
 weight = 16
 +++

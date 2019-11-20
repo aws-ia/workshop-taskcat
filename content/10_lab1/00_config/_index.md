@@ -4,6 +4,7 @@ chapter = false
 weight = 12
 +++
 
+{{% children depth="2" showhidden="true" %}}
 
 ### Project Config
 Ths config file provides project specific configuration.

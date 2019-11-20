@@ -1,5 +1,5 @@
 +++
-title = "- Defining tests"
+title = "Defining tests"
 chapter = false
 weight = 14
 +++

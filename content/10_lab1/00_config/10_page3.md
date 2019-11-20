@@ -1,5 +1,5 @@
 +++
-title = "- Define project section"
+title = "Define project section"
 chapter = false
 weight = 13
 +++

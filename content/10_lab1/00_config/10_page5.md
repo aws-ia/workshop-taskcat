@@ -1,5 +1,5 @@
 +++
-title = "- Define regions"
+title = "Define regions"
 chapter = false
 weight = 15
 +++
