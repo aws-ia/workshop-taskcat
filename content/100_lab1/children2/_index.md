@@ -1,17 +1,16 @@
 +++
-title = "Execute a taskcat test"
-chapter = true
+title = "Execute a test"
+chapter = false
 +++
 
-
+Now, your project config file has all the details to run a test.
 
 ## Start a test
 
-From the **lab-1/cfn-project** dir run you taskcat test
+In your terminal window, from the **lab-1/cfn-project** dir, execute the following command to run a test.
 
-```
-taskcat test run
-```
+`taskcat test run`
 
-Expected output:
+You should see the following output.
+
 ![fig1.1](/images/taskcat_execution.gif)

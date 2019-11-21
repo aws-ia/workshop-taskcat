@@ -4,10 +4,13 @@ chapter = false
 weight = 10
 +++
 
+You will use AWS Appstream to connect to your lab environment. You will find the Appstream URL in your team dashbaord.
+
+@TODO Screenshot
 
 ## Lab information 
 
-The AWS Appstream seesion that you are using for this hands on lab has the follow programs pre-installed:
+The AWS Appstream session that you are using for this hands on lab has the following programs pre-installed:
 
 - Python3 (taskcat is Python program)
 - taskcat (pip install taskcat)
@@ -19,9 +22,9 @@ The AWS Appstream seesion that you are using for this hands on lab has the follo
 ## Copy paste
 
 Copy and paste should work out of the box on all browsers, in some browsers you may get 
-a dialog requesting clipboard access which must be allowed to enable copy-paste.
+a dialog box requesting clipboard access which must be allowed to enable copy-paste.
 
-The appstream also provides a tool in the top left of the window that enables placing 
+The AppStream also provides a tool in the top left of the window that enables placing 
 data into the AppStream session's clipboard. This is recommended for pasting large 
 blocks of text.
 

@@ -1,10 +1,8 @@
 +++
 title = "Prerequisites"
-chapter = true
+chapter = false
 weight = 1
 +++
-
-# Prerequisites for the Workshop
 
 ## What you need to get started!
 
