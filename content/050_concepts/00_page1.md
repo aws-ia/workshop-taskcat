@@ -7,18 +7,18 @@ weight = 60
 
 Taskcat uses two config files: _**Global config**_  and _**Project config**_
 
-### Project Config
+## Project Config
 This config file provides project-specific configurations.
 
-The project config file is located in the root of your project folder _`<PROJECT_ROOT>/.taskcat.yml`_
+The project config file is located in the root of your project folder **\<PROJECT_ROOT\>/.taskcat.yml**
 
-Since each lab uses the `cfn-project` directory as the _project root_, this is where our project-specific taskcat config file will reside.
+Since each lab uses the **cfn-project** directory as the _project root_, this is where your project-specific taskcat config file will reside.
 
-### Global config
+## Global config
 This config file provides global settings that become defaults for **all projects**.
 
-The global config file is located in user's home-directory.  _`~/.taskcat.yml`_
+The global config file is located in user's home-directory.  **~/.taskcat.yml**
 
-_***Note: The project-level configuration takes precedence over any items in the global config.***_
-__***However, Global parameters take precedence over project-level parameters. See the next section for more details.***__
-
+{{% notice info %}}
+The project-level configuration takes precedence over any items in the global config. However, Global parameters take precedence over project-level parameters. See the next section for more details
+{{% /notice %}}

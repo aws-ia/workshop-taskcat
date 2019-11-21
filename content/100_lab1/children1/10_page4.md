@@ -1,25 +1,25 @@
 +++
-title = "Defining tests"
+title = "Define tests"
 chapter = false
 weight = 130
 +++
 
+Next, you will create a test definition in the config file
 
+## Adding test definition
 
-## Adding test definitions
+1. Define a test called **mytest** and provide a value for the **template** key.
 
-* Define a test called `mytest` and define the `template` location
+2. Specify template path relative to your project root, which is **templates/lab1.template.yaml**
 
-* Specify path to your relative to you project root `template:` `templates/lab1.template.yaml`
+At this point, your **.taskcat.yml** file should look like below.
 
-> Most of the defaults in taskcat can be overriden with command line flags, the default 
-> project root is the current working directory, and the default location for the .taskcat.yml 
-> file is in the root. To override these defaults you can use `--project-root PROJECT_ROOT` 
-> and `--input-file PATH_TO_/.taskcat.yml` 
-
-
-```
+```yaml
+project:
+  name: cfn-project
 tests:
   mytest:
-    template: templates/lab1.template.yaml
+    template: templates/lab1.template.yamls
 ```
+
+

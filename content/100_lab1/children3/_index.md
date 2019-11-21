@@ -1,6 +1,6 @@
 +++
 title = "Lambda packaging"
-chapter = true
+chapter = false
 +++
 
 
