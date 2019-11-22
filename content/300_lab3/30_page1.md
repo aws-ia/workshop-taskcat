@@ -6,9 +6,8 @@ weight = 310
 
 ## Add more regions
 
-* Edit your `lab3/cfn_project/.taskcat.yml` parameters to include additional regions.
-
-* Example project config file:
+* Edit your `lab3/cfn_project/.taskcat.yml` parameters to include additional regions. 
+Below is an example of what your file should look like once you're done.
 
 ```
 project:
@@ -28,6 +27,10 @@ tests:
 
 ```
 
+{{% notice warning %}}
+Be sure to save the file (Ctrl+s) before running taskcat
+{{% /notice %}}
+
 ## Test the new regions
 
 ```
@@ -46,7 +49,13 @@ cfn-project
 
 ```
 
-open `taskcat_outputs/index.html` in the your web browser
+To open `taskcat_outputs/index.html` in the AppStream browser, we've provided a simple 
+shortcut that can be executed from the terminal:
+
+```
+open-taskcat-report
+```
+
 ![fig1.3](/images/fig_lab1.3.png)
 
 To see the test logs click the **View Logs** link
