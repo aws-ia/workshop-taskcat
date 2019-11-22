@@ -32,7 +32,7 @@ AWS CodeCommit repository, in your AWS account.
 
 1. Goto your development environment and in the terminal window, run the following 
 command to make sure you are in the **lab5/cfn-project** folder - 
-``cd /mnt/c/Users/Public/Documents/Workshop/workshop/content/lab_assets/start/lab5/cfn-project/``.
+`cd /workshop/lab5/cfn-project/`.
 
 2. Run `git init`, to initialize the git repository in your project folder. This will 
 automatically create and checkout the **master** branch.

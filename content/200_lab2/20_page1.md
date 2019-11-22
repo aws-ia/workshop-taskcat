@@ -37,10 +37,18 @@ file, in the IDE terminal type:
 open-taskcat-global-config
 ```
 
-* Example global config file:
+The file will contain an empty **general** section when you open it. Let's add an 
+override to it for our LicenseToken. notice that the IDE has auto-complete, and 
+validation on the config file format, so if anything is invalid you will see it inline, 
+and in the **PROBLEMS** tab to the left of the terminal. Once you're done your config 
+should look like this:
 
 ```yaml
     general:
       parameters:
         LicenseToken: 're:invent-2019-is-awesome'
 ```
+
+{{% notice warning %}}
+Be sure to save the file (Ctrl+s) before closing it
+{{% /notice %}}

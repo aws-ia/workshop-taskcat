@@ -4,6 +4,13 @@ chapter = false
 weight = 330
 +++
 
+## Run another test
+
+from the lab2/cfn-project folder in the terminal, run another taskcat test:
+
+```
+taskcat test run
+```
 
 ## Test Results
 

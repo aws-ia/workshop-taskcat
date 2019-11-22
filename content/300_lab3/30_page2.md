@@ -11,7 +11,7 @@ in S3 to be in the same region as the stack. In this example we will add a resou
 the stack that copies the Lambda zip from the bucket in us-east-1 to the stack region 
 before creating the lambda.
 
-* In VSCode, edit the `cfn_project/templates/lab3.template.yaml` file. We'll be adding 
+* In VSCode, edit the **cfn_project/templates/lab3.template.yaml** file. We'll be adding 
 the following snippet to the _Resources_ section of the template.
 
 ```yaml
@@ -44,10 +44,10 @@ return the name of the new bucket, that we will use in the Code property of our
         S3Key: !Sub '${S3KeyPrefix}lambda_functions/packages/GenRandom/lambda.zip'
 ```
 
-The full template should reflect the following:
+The full **cfn_project/templates/lab3.template.yaml** template should reflect the 
+following:
 
 * Feel free to copy and paste!
-
 
 ```
 AWSTemplateFormatVersion: 2010-09-09
