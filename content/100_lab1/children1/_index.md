@@ -1,6 +1,7 @@
 +++
 title = "Add a (Project Level) config"
 chapter = false
+weight = 100
 +++
 
 ## Project Config
