@@ -1,6 +1,6 @@
 .DS_Store
 resources/_gen/*
-content/lab_assets/start/lab1/lambda_functions/packages/*
+content/lab_assets/start/*/cfn-project/lambda_functions/packages/
 docs/
 taskcat_outputs/
 package-lock.json
