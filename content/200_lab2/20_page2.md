@@ -14,5 +14,5 @@ From the **cfn-project** dir run you taskcat test
 taskcat test run
 ```
 
-Expected output:
-![fig1.1](/images/taskcat_execution.gif)
+Estimated runtime (5 mins)
+![fig2.1](/images/taskcat_execution2.gif)

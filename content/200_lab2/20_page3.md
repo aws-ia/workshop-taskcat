@@ -20,4 +20,5 @@ Notice that the value for **AvailablityZones** has been replaced with 2 az names
 us-east-1 region
 
 
-@TODO: MORE SCREENSHOTS OF TEMPLATE OUTPUTS
+![fig1.4](/images/stack_outputs.png)
+
