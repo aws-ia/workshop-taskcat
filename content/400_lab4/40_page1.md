@@ -20,6 +20,5 @@ taskcat test run --no-delete
 $TODO
 add link to CloudFormation console
 
-**Complete the survey**
-@TODO 
 Add screenshort for the survey endpoint
+![fig4.1](/images/survey_link.png)

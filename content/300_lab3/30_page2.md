@@ -21,7 +21,7 @@ shortcut that can be executed from the terminal:
 open-taskcat-report
 ```
 
-![fig3.2](/images/failed_outputs.png)
+![fig3.1](/images/failed_outputs.png)
 
 To see the test logs click the **View Logs** link
 
