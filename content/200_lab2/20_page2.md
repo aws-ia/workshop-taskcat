@@ -15,4 +15,4 @@ taskcat test run
 ```
 
 Estimated runtime (5 mins)
-![fig2.1](/images/taskcat_execution2.gif)
+![fig2.2](/images/taskcat_execution2.gif)
