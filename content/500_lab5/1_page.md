@@ -40,22 +40,25 @@ automatically create and checkout the **master** branch.
 3. Replace **YOUR-NAME** with your name, in `git config user.name "YOUR-NAME"` and run 
 it to configure your git username.
 
-4. Run `git commit --allow-empty -m "root commit"`, to make an empty commit to the 
+4. Replace **YOUR-NAME** with your name, in `git config user.email "EMAIL@YOUR.DOMAIN"` and run
+it to configure your git email address.
+
+5. Run `git commit --allow-empty -m "root commit"`, to make an empty commit to the 
 master branch. Git doesn't allow to push empty branches to the remote repository. 
 Therefore you are creating an empty commit by running this command.
 
-5. Run `git checkout -b develop`, to make the **develop** branch as your working 
+6. Run `git checkout -b develop`, to make the **develop** branch as your working 
 directory.
 
-6. Run `git add .`, to stage all your changes.
+7. Run `git add .`, to stage all your changes.
 
-7. Run `git commit -m "Initial code"`, to commit your changes locally.
+8. Run `git commit -m "Initial code"`, to commit your changes locally.
 
-8. Go to your team's dashboard and copy **CodeCommit git URL**. Replace 
+9. Go to your team's dashboard and copy **CodeCommit git URL**. Replace 
 **CODE-COMMIT-REPO-URL** with the URL you copied in the following command and run it. 
 `git remote add origin CODE-COMMIT-REPO-URL`.
 
-9. Run `git push origin --all`, to push your changes to the remote repository. When 
+10. Run `git push origin --all`, to push your changes to the remote repository. When 
 prompted, enter the AWS CodeCommit git username and password, which you can get from 
 your team's dashboard.
 
