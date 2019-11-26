@@ -1,10 +1,10 @@
 +++
-title = "Lab Enviornment"
+title = "Lab Environment"
 chapter = false
 weight = 10
 +++
 
-You will use AWS Appstream to connect to your lab environment. You will find the Appstream URL in your team dashbaord.
+You will use AWS Appstream to connect to your lab environment. You will find the Appstream URL in your team dashbaard.
 
 @TODO Screenshot
 

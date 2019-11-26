@@ -5,7 +5,7 @@ weight = 200
 +++
 
 ## What you will do in this lab:
-Using the provided clouformation template build a taskcat config that uses **psuedo-parameters**
+Using the provided cloudformation template build a taskcat config that uses **psuedo-parameters**
 
 We will use override to inject a `LicenseToken` and dynamically inject `AvailiblityZone` 
 values during testing
