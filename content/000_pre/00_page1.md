@@ -4,7 +4,7 @@ chapter = false
 weight = 10
 +++
 
-You will use AWS Appstream to connect to your lab environment. You will find the Appstream URL in your team dashbaard.
+You will use AWS Appstream to connect to your lab environment. You will find the Appstream URL in your team dashboard.
 
 @TODO Screenshot
 
