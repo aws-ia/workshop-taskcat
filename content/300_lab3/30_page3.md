@@ -18,7 +18,7 @@ the following snippet to the _Resources_ section of the template.
   CopyZipsTemplate:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: !Sub "https://${S3BucketName}.${AWS::Region}.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
+      TemplateURL: !Sub "https://${S3BucketName}.s3.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
       Parameters:
         S3BucketName: !Ref S3BucketName
         S3KeyPrefix: !Ref S3KeyPrefix
@@ -112,7 +112,7 @@ Resources:
       CopyZipsTemplate:
         Type: AWS::CloudFormation::Stack
         Properties:
-          TemplateURL: !Sub "https://${S3BucketName}.${AWS::Region}.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
+          TemplateURL: !Sub "https://${S3BucketName}.s3.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
           Parameters:
             S3BucketName: !Ref S3BucketName
             S3KeyPrefix: !Ref S3KeyPrefix
