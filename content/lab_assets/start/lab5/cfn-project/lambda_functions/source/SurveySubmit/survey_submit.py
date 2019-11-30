@@ -65,6 +65,6 @@ def lambda_handler(event, context):
             'body': html_result,
             'headers': {
                 'Content-Type': 'text/html',
-                "Refresh": "5;url=Prod/newsurvey",
+                "Refresh": "5;url=newsurvey",
             }
         }
