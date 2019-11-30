@@ -18,9 +18,7 @@ taskcat test run --no-delete
 
 * Once the taskcat test completes, navigate to the CloudFormation console by clicking...
 
-$TODO
-add link to CloudFormation console
+[CloudFormation Console](https://console.aws.amazon.com/cloudformation/home)
 
-**Complete the survey**
-@TODO 
-Add screenshort for the survey endpoint
+TODO: Add screenshort for the survey endpoint
+![fig4.1](/images/survey_link.png)

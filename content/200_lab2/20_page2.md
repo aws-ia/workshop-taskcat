@@ -15,5 +15,5 @@ cd /workshop/lab2/cfn-project
 taskcat test run
 ```
 
-Expected output:
-![fig1.1](/images/taskcat_execution.gif)
+Estimated runtime (5 mins)
+![fig2.2](/images/taskcat_execution2.gif)
