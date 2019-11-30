@@ -1,13 +1,37 @@
 Title: taskcat workshop quiz
 Author: AWS Quick Start team
-Image: https://a0.awsstatic.com/main/images/logos/aws_logo_smile_1200x630.png
+Image: https://taskcat.github.io/workshop/images/Taskcat-logo.png
 Theme: 282828
 Questions:
     Question1:
         Type: Radio
-        Label: ""
+        Label: "What type of cloud spans all 3 altitude ranges?"
         Values:
-            Value1: "1"
-            Value2: "2"
-            Value3: "3"
-            Value4: "4"
+            Value1: "Cirrostratus"
+            Value2: "Cumulonimbus"
+            Value3: "Nimbostratus"
+            Value4: "Altocumulus"
+    Question2:
+        Type: Radio
+        Label: "At what altitude level can you find nimbostratus clouds?"
+        Values:
+            Value1: "Low"
+            Value2: "Middle"
+            Value3: "High"
+            Value4: "All"
+    Question3:
+        Type: Radio
+        Label: 'Which Latin word means "sheet" or "layer"?'
+        Values:
+            Value1: "Nimbus"
+            Value2: "Cumulus"
+            Value3: "Cirrus"
+            Value4: "Stratus"
+    Question4:
+        Type: Radio
+        Label: 'What is the origin of the name taskcat'
+        Values:
+            Value1: "Tony, the creator, had a cat that wrote CloudFormation"
+            Value2: "Acronym for 'Totally Active Super Kool CAT'"
+            Value3: "No one knows"
+            Value4: "Acronym for 'Tony ASKed CAT'"
