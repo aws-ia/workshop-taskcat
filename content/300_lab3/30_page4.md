@@ -9,6 +9,7 @@ weight = 330
 from the lab3/cfn-project folder in the terminal, run another taskcat test:
 
 ```
+cd /workshop/lab3/cfn-project
 taskcat test run
 ```
 
