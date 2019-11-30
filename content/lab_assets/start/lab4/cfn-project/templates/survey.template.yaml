@@ -72,7 +72,7 @@ Resources:
             PolicyDocument:
               Statement:
                   - Action:
-                    - iam:AssumeRole
+                    - sts:AssumeRole
                     Resource: "*"
                     Effect: Allow
       AssumeRolePolicyDocument:

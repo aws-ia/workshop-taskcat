@@ -2,7 +2,7 @@ AWSTemplateFormatVersion: "2010-09-09"
 Parameters:
   DynamoDbArn:
     Type: String
-    Default: ""
+    Default: "arn:aws:dynamodb:us-west-2:840161740319:table/tcat-workshop-quiz"
   S3BucketName:
     Type: String
   S3KeyPrefix:
@@ -56,7 +56,7 @@ Resources:
           - PolicyName: SurveySubmitRolePolicy
             PolicyDocument:
               Statement:
-                - Action: ["iam:AssumeRole"]
+                - Action: ["sts:AssumeRole"]
                   Resource: "*"
                   Effect: Allow
       AssumeRolePolicyDocument:

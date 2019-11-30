@@ -1,6 +1,7 @@
 from yattag import Doc
 import boto3
 import os
+from datetime import datetime
 
 
 def acc_id_from_arn(arn):
@@ -40,7 +41,8 @@ def get_ddb_table(local_acc):
 def lambda_handler(event, context):
     account_id = acc_id_from_arn(context.invoked_function_arn)
     table = get_ddb_table(account_id)
-    item_data = {'id': str(account_id)}
+    timestamp = int(datetime.now().timestamp() * 1000000)
+    item_data = {'id': str(account_id), 'timestamp': timestamp}
     for param in event["queryStringParameters"]:
         value = event["queryStringParameters"][param]
         if not value:
