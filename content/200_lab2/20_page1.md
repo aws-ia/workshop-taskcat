@@ -48,7 +48,3 @@ should look like this:
       parameters:
         LicenseToken: 're:invent-2019-is-awesome'
 ```
-
-{{% notice warning %}}
-Be sure to save the file (Ctrl+s) before closing it
-{{% /notice %}}

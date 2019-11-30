@@ -16,9 +16,8 @@ tests:
       mytest:
         template: templates/lab3.template.yaml
         regions:
-        - us-east-1
-        - us-east-2
-        - us-west-2
+        - "us-east-2"
+        - "us-west-2"
         parameters:
           S3BucketName: '$[taskcat_autobucket]'
           S3KeyPrefix: 'cfn-project/'
@@ -27,13 +26,10 @@ tests:
 
 ```
 
-{{% notice warning %}}
-Be sure to save the file (Ctrl+s) before running taskcat
-{{% /notice %}}
-
 ## Test the new regions
 
 ```
+cd /workshop/lab3/cfn-project
 taskcat test run
 ```
 

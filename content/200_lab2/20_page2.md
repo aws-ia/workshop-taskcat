@@ -11,6 +11,7 @@ weight = 220
 From the **cfn-project** dir run you taskcat test
 
 ```
+cd /workshop/lab2/cfn-project
 taskcat test run
 ```
 

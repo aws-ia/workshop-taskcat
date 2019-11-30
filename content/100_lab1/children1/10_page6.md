@@ -29,7 +29,7 @@ tests:
   mytest:
     template: templates/lab1.template.yaml
     regions:
-    - us-east-1
+    - "us-east-1"
     parameters: 
       S3BucketName: '$[taskcat_autobucket]'
 ```

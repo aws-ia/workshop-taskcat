@@ -19,7 +19,7 @@ project:
   name: cfn-project
 tests:
   mytest:
-    template: templates/lab1.template.yamls
+    template: templates/lab1.template.yaml
 ```
 
 

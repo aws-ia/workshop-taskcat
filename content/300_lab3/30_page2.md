@@ -15,14 +15,14 @@ before creating the lambda.
 the following snippet to the _Resources_ section of the template.
 
 ```yaml
-  CopyZipsTemplate:
-    Type: AWS::CloudFormation::Stack
-    Properties:
-      TemplateURL: !Sub "https://${S3BucketName}.${AWS::Region}.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
-      Parameters:
-        S3BucketName: !Ref S3BucketName
-        S3KeyPrefix: !Ref S3KeyPrefix
-        SourceObjects: "lambda_functions/packages/GenRandom/lambda.zip"
+    CopyZipsTemplate:
+      Type: AWS::CloudFormation::Stack
+      Properties:
+        TemplateURL: !Sub "https://${S3BucketName}.s3.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
+        Parameters:
+          S3BucketName: !Ref S3BucketName
+          S3KeyPrefix: !Ref S3KeyPrefix
+          SourceObjects: "lambda_functions/packages/GenRandom/lambda.zip"
 ```
 
 This child stack contains a Lambda backed custom resource that takes the SourceObjects 
@@ -31,17 +31,17 @@ return the name of the new bucket, that we will use in the Code property of our
 **GenRandomLambda** resource.
 
 ```yaml
-  GenRandomLambda:
-    Type: AWS::Lambda::Function
-    Properties:
-      Description: Lambda creates simple random string
-      Handler: lambda_function.handler
-      Runtime: python3.7
-      Role: !GetAtt 'LambdaExecutionRole.Arn'
-      Timeout: 300
-      Code:
-        S3Bucket: !GetAtt 'CopyZipsTemplate.Outputs.LambdaZipsBucket'
-        S3Key: !Sub '${S3KeyPrefix}lambda_functions/packages/GenRandom/lambda.zip'
+    GenRandomLambda:
+      Type: AWS::Lambda::Function
+      Properties:
+        Description: Lambda creates simple random string
+        Handler: lambda_function.handler
+        Runtime: python3.7
+        Role: !GetAtt 'LambdaExecutionRole.Arn'
+        Timeout: 300
+        Code:
+          S3Bucket: !GetAtt 'CopyZipsTemplate.Outputs.LambdaZipsBucket'
+          S3Key: !Sub '${S3KeyPrefix}lambda_functions/packages/GenRandom/lambda.zip'
 ```
 
 The full **cfn_project/templates/lab3.template.yaml** template should reflect the 
@@ -84,15 +84,8 @@ Resources:
               Action:
               - sts:AssumeRole
           Path: "/"
-          Policies:
-          - PolicyName: root
-            PolicyDocument:
-              Version: '2012-10-17'
-              Statement:
-              - Effect: Allow
-                Action:
-                - logs:*
-                Resource: arn:aws:logs:*:*:*
+          ManagedPolicyArns:
+          - "arn:aws:iam::aws:policy/AWSLambdaExecute"
       GenRandomLambda:
         Type: AWS::Lambda::Function
         Properties:
@@ -102,7 +95,7 @@ Resources:
           Role: !GetAtt 'LambdaExecutionRole.Arn'
           Timeout: 300
           Code:
-            S3Bucket: !Ref 'S3BucketName'
+            S3Bucket: !GetAtt 'CopyZipsTemplate.Outputs.LambdaZipsBucket'
             S3Key: !Sub '${S3KeyPrefix}lambda_functions/packages/GenRandom/lambda.zip'
       StringGenerator:
         Type: Custom::RandomString
@@ -112,7 +105,7 @@ Resources:
       CopyZipsTemplate:
         Type: AWS::CloudFormation::Stack
         Properties:
-          TemplateURL: !Sub "https://${S3BucketName}.${AWS::Region}.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
+          TemplateURL: !Sub "https://${S3BucketName}.s3.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml"
           Parameters:
             S3BucketName: !Ref S3BucketName
             S3KeyPrefix: !Ref S3KeyPrefix
@@ -121,10 +114,4 @@ Outputs:
       GeneratedRandomString:
         Description: Generated Random String
         Value: !GetAtt StringGenerator.RandomString
-      LicenseToken:
-        Description:  LicenseToken passed in via overrides
-        Value: !Ref LicenseToken
-      AvailabilityZones:
-        Description:  AvailabilityZones injected via $[taskcat_genaz_3] psuedo-parameter
-        Value:  !Join [ ',', !Ref 'AvailabilityZones' ]
 ```

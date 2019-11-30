@@ -33,6 +33,11 @@ In **Build** stage, pipeline is using AWS CodeBuild to run TaskCat for your proj
 performs all the tests, as defined in the project configuration file. On success, it 
 merges the source branch into the target/release branch.
 
+{{% notice tip %}}
+To view the build logs (which include taskcat outputs) click on the **Details** link in 
+the Build stage block. 
+{{% /notice %}}
+
 ### Validate code promotion
 
 After the pipeline execution is completed successfully, you should have all the changes 

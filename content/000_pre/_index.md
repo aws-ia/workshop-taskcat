@@ -10,7 +10,7 @@ If you are doing this workshop as part of an AWS event, you will be provided an 
 
 To login to that AWS Account, you will be given a unique **hash**, something as below:
 
-*b76bbe879be74e988678bb4a831365f3*
+*b76bbe879*
 
 To login - open a web browser,  navigate to https://dashboard.eventengine.run/ and enter the **hash** to proceed.
 

@@ -19,6 +19,11 @@ The AWS Appstream session that you are using for this hands on lab has the follo
   - cfn-lint validation
   - CloudFormation template auto-complete and doc links from the cfn-resource-spec
 
+## Auto save
+
+The IDE is configured to auto-save files when they are changed, so there is no need to 
+manually save files.
+
 ## Copy paste
 
 Copy and paste should work out of the box on all browsers, in some browsers you may get 

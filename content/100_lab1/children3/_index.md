@@ -8,9 +8,12 @@ Now, your project config file has all the details to run a test.
 
 ## Start a test
 
-In your terminal window, from the **lab-1/cfn-project** dir, execute the following command to run a test.
+In your terminal window, from the **lab1/cfn-project** dir, execute the following command to run a test.
 
-`taskcat test run`
+```
+cd /workshop/lab1/cfn-project
+taskcat test run
+```
 
 You should see the following output.
 

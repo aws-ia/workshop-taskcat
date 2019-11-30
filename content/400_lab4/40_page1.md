@@ -10,6 +10,7 @@ weight = 410
 * Run **taskcat test run --no-delete** or **-n** flag to retain the CloudFormation stack 
 
 ```
+cd /workshop/lab4/cfn-project
 taskcat test run --no-delete
 ```
 

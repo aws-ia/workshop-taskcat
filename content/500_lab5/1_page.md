@@ -51,9 +51,9 @@ directory.
 
 7. Run `git commit -m "Initial code"`, to commit your changes locally.
 
-8. Go to your team's dashboard and copy **CodeCommit git URL**. Replace 
-**CODE-COMMIT-REPO-URL** with the URL you copied in the following command and run it. 
-`git remote add origin CODE-COMMIT-REPO-URL`.
+8. Go to the [Event Engine dashboard](https://dashboard.eventengine.run/) and copy 
+**CodeCommit git URL**. Replace **CODE-COMMIT-REPO-URL** with the URL you copied in the 
+following command and run it. `git remote add origin CODE-COMMIT-REPO-URL`.
 
 9. Run `git push origin --all`, to push your changes to the remote repository. When 
 prompted, enter the AWS CodeCommit git username and password, which you can get from 
