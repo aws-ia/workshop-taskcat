@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+  DeplyBucket:
+    Type: String
+    AllowedValues: ["true", "false"]
+Conditions:
+CreateBucket: !Equals [!Ref DeplyBucket, "true"]
+Resources:
+  S3Bucket:
+    Type: "AWS::S3::Bucket"
+    Condition: CreateBucket
+    Properties: {}
+  Param:
+    Type: "AWS::SSM::Parameter"
+    Properties:
+      Tier: STD
+      Type: S
+      Value: !Ref S3Bucket
+Outputs:
+  ParamArn:
+    Value: !GetAtt Param.Arm

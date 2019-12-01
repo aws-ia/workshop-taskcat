@@ -1,0 +1,15 @@
+project:
+  templates:
+    - templates/broken1.template.yaml
+  regions:
+    - us-east-1
+    - us-west-2
+    - eu-west-1
+  parameters:
+    DeployBucket: true
+tests:
+  with-bucket: {}
+  no-bucket:
+    region: us-west-2
+    parameters:
+      DeployBucket: false
