@@ -46,6 +46,7 @@ Resources:
         S3Bucket: !Ref 'S3BucketName'
         S3Key: !Sub '${S3KeyPrefix}lambda_functions/packages/GenRandom/lambda.zip'
   StringGenerator:
+    DeletionPolicy: Retain
     Type: AWS::CloudFormation::CustomResource
     Properties:
       ServiceToken: !GetAtt GenRandomLambda.Arn
