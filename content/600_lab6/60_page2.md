@@ -11,7 +11,7 @@ scratch.
 
 Template should have the following:
 
-* Allow users to provide the subnet CIDR block and AZ names via parameters.
+* Allow users to provide the subnet CIDR block and AZ name via Parameters.
 * Pass taskcat tests in *us-east-1*, *us-west-2* and *eu-west-1*
 
 {{% notice tip %}}
