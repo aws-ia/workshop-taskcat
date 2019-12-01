@@ -4,6 +4,6 @@ project:
   parameters:
     S3BucketName: "$[taskcat_autobucket]"
   regions:
-    - "us-east-2"
+    - "us-west-2"
 tests:
   default: {}
