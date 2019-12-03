@@ -9,7 +9,7 @@ dasbhoard and make a note of the following values. You will need this to create 
 pipeline.
 
 - Your AWS Code Commit **repository Url** (https://)
-- Your AWS Code Commit **repository name** - `quiz app`
+- Your AWS Code Commit **repository name** - `quiz-app`
 
 ### Launch stack
 To create a CICD pipeline, you will use a CloudFormation template. Click the following 
