@@ -27,7 +27,7 @@ to lambda_functions/packages/. This zip file is referenced in our lambda functio
 
 {{% notice tip %}}
 The default source and package folders can be changed by setting values in your 
-[project_config](https://aws-quickstart.github.io/taskcat/#project-config) file.
+[project_config](https://aws-ia.github.io/taskcat/docs/usage/GENERAL_USAGE.html#project-config) file.
 {{% /notice %}}
 
 taskcat is able to build dependencies for your lambda so that you don't need to 
