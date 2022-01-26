@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lab 2 on taskcat workshop</title>
+    <link>/200_lab2.html</link>
+    <description>Recent content in Lab 2 on taskcat workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/200_lab2/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create Psuedo Parameters</title>
+      <link>/200_lab2/20_page1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/200_lab2/20_page1.html</guid>
+      <description>Add Psuedo-Parameters to your project-level taskcat config   Edit your cfn_project/.taskcat.yml parameters to include psuedo-parameters. Please see the Taskcat Concepts section for more details on psuedo-parameters
+  Example project config file:
+  project: name: cfn-project tests: mytest: template: templates/lab2.template.yaml regions: - us-east-1 parameters: S3BucketName: &amp;#39;$[taskcat_autobucket]&amp;#39; S3KeyPrefix: &amp;#39;cfn-project/&amp;#39; LicenseToken: &amp;#39;value-to-be-overriden-by-global-config&amp;#39; AvailabilityZones: &amp;#39;$[taskcat_genaz_2]&amp;#39; Add Psuedo-parameters to your global taskcat config.   Edit your parameters to include psuedo-parameters.
+  Note: For the purposes of this lab, we&amp;rsquo;ve created a shortcut command to access to the file, in the IDE terminal type:</description>
+    </item>
+    
+    <item>
+      <title>Execute a taskcat test</title>
+      <link>/200_lab2/20_page2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/200_lab2/20_page2.html</guid>
+      <description>Start a test From the cfn-project dir run you taskcat test
+cd /workshop/lab2/cfn-project taskcat test run Estimated runtime (5 mins) </description>
+    </item>
+    
+    <item>
+      <title>Check Template Outputs</title>
+      <link>/200_lab2/20_page3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/200_lab2/20_page3.html</guid>
+      <description>Login to the AWS Console  from the Event Engine dashboard click login to AWS console navigate to the CloudFormation console in us-east-1 (N. Virginia) Change the filter to view Deleted stacks Select the top stack ( they are ordered by creation date) Click on the &amp;ldquo;Outputs&amp;rdquo; tab  Notice that the values for the LicenseToken parameter has been replaced with the value specified in the global override.
+Notice that the value for AvailablityZones has been replaced with 2 az names from the us-east-1 region</description>
+    </item>
+    
+  </channel>
+</rss>

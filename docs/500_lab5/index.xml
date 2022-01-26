@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lab 5 on taskcat workshop</title>
+    <link>/500_lab5.html</link>
+    <description>Recent content in Lab 5 on taskcat workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/500_lab5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Initialize Git repo</title>
+      <link>/500_lab5/1_page.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/500_lab5/1_page.html</guid>
+      <description>To create a CICD pipeline for your project, you need a git repository. This repository will contain all the source code of your project and will be the source to trigger your pipeline.
+For this lab, you will use AWS CodeCommit for your project&amp;rsquo;s git repository. We have already pre-created a Code Commit repsoitory in your team&amp;rsquo;s AWS Account. Click the following link to open the AWS CodeCommit console in a new tab of your browser.</description>
+    </item>
+    
+    <item>
+      <title>Deploy CI/CD pipeline</title>
+      <link>/500_lab5/10_page.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/500_lab5/10_page.html</guid>
+      <description>Now, it&amp;rsquo;s time to setup a CICD pipeline for your project. To do that, go to your team&amp;rsquo;s dasbhoard and make a note of the following values. You will need this to create the pipeline.
+ Your AWS Code Commit repository Url (https://) Your AWS Code Commit repository name - quiz-app  Launch stack To create a CICD pipeline, you will use a CloudFormation template. Click the following button to launch a stack creation for the CICD pipeline.</description>
+    </item>
+    
+    <item>
+      <title>View test and code promotion</title>
+      <link>/500_lab5/20_page.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/500_lab5/20_page.html</guid>
+      <description>Now, after your stack creation is completed successfully and you have a CICD pipeline setup, let&amp;rsquo;s see what does the pipeline do.
+View CICD pipeline On your Cloudformation console, click the Outputs tab.
+Look for CodePipelineURL, and open the link in a new tab in your browser.
+This will open the AWS Code Pipeline console, and you should see a pipeline.
+You may see that, either the Source action or the Build action is in-progress.</description>
+    </item>
+    
+  </channel>
+</rss>

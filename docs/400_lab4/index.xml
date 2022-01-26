@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lab 4 on taskcat workshop</title>
+    <link>/400_lab4.html</link>
+    <description>Recent content in Lab 4 on taskcat workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/400_lab4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Run test with no-delete</title>
+      <link>/400_lab4/40_page1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/400_lab4/40_page1.html</guid>
+      <description>Execute the test.   Run taskcat test run &amp;ndash;no-delete or -n flag to retain the CloudFormation stack  cd /workshop/lab4/cfn-project taskcat test run --no-delete Launch the application after deployment.  Once the taskcat test completes, navigate to the CloudFormation console by clicking&amp;hellip;  CloudFormation Console
+TODO: Add screenshort for the survey endpoint </description>
+    </item>
+    
+    <item>
+      <title>Clean up tests</title>
+      <link>/400_lab4/40_page2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/400_lab4/40_page2.html</guid>
+      <description>List tests   taskcat can list the tests that have not been cleaned up yet  taskcat test list The output will display the test name, id and region for each active stack launched by taskcat
+Delete the test Using the id from the list command, clean up the test:
+taskcat test clean &amp;lt;TEST_ID&amp;gt;  You can clean up all tests in your account with taskcat test clean ALL</description>
+    </item>
+    
+  </channel>
+</rss>

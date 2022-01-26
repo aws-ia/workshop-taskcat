@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Add a (Project Level) config on taskcat workshop</title>
+    <link>/100_lab1/children1.html</link>
+    <description>Recent content in Add a (Project Level) config on taskcat workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/100_lab1/children1/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Define project section</title>
+      <link>/100_lab1/children1/10_page3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/100_lab1/children1/10_page3.html</guid>
+      <description>First, you will create a project section in your project configuration file.
+Add a project section To add a project section, copy and paste the following in .taskcat.yml file.
+project: name: cfn-project  It is important that you keep the project name as cfn-project. This value is being used in other places in CloudFormation templates, that you will be using in this workshop. Changing the project name may cause issues in future labs.</description>
+    </item>
+    
+    <item>
+      <title>Define tests</title>
+      <link>/100_lab1/children1/10_page4.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/100_lab1/children1/10_page4.html</guid>
+      <description>Next, you will create a test definition in the config file
+Adding test definition   Define a test called mytest and provide a value for the template key.
+  Specify template path relative to your project root, which is templates/lab1.template.yaml
+  At this point, your .taskcat.yml file should look like below.
+project: name: cfn-project tests: mytest: template: templates/lab1.template.yaml </description>
+    </item>
+    
+    <item>
+      <title>Define regions</title>
+      <link>/100_lab1/children1/10_page5.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/100_lab1/children1/10_page5.html</guid>
+      <description>Now, you will define in which AWS regions you want to test your cloudformation templates.
+Add regions to your test The regions: key is optional for the tests. By default regions inherit from the global configuration (We will conver global configs later in this lab)
+The regions key takes a list of regions. When defined in a test, taskcat will limit test to those regions
+For now, specifiy only one region us-east-1.</description>
+    </item>
+    
+    <item>
+      <title>Define parameters</title>
+      <link>/100_lab1/children1/10_page6.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/100_lab1/children1/10_page6.html</guid>
+      <description>You can pass parameter values to your template through taskcat configuration file. These values will be passed to your template when launching the stack.
+Add a parameter section to the test Add the parameters key to mytest, and set the value of S3BucketName to $[taskcat_autobucket].
+parameters: S3BucketName: &amp;#39;$[taskcat_autobucket]&amp;#39; $[taskcat_autobucket] is a pseudo-parameter. This tells taskcat to automatically generate an S3 bucket name, create that bucket and use it for test execution.</description>
+    </item>
+    
+  </channel>
+</rss>

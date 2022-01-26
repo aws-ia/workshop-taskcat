@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Prerequisites on taskcat workshop</title>
+    <link>/000_pre.html</link>
+    <description>Recent content in Prerequisites on taskcat workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/000_pre/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lab Environment</title>
+      <link>/000_pre/00_page1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/000_pre/00_page1.html</guid>
+      <description>You will use AWS Appstream to connect to your lab environment. You will find the Appstream URL in your team dashboard.
+@TODO Screenshot
+Lab information The AWS Appstream session that you are using for this hands on lab has the following programs pre-installed:
+ Python3 (taskcat is Python program) taskcat (pip install taskcat) Vscode with plugins pre-installed  taskcat config validation cfn-lint validation CloudFormation template auto-complete and doc links from the cfn-resource-spec    Auto save The IDE is configured to auto-save files when they are changed, so there is no need to manually save files.</description>
+    </item>
+    
+  </channel>
+</rss>

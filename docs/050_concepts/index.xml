@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Getting Started on taskcat workshop</title>
+    <link>/050_concepts.html</link>
+    <description>Recent content in Getting Started on taskcat workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/050_concepts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Config hierarchy</title>
+      <link>/050_concepts/00_page1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/050_concepts/00_page1.html</guid>
+      <description>Taskcat uses two config files: Global config and Project config
+Project Config This config file provides project-specific configurations.
+The project config file is located in the root of your project folder &amp;lt;PROJECT_ROOT&amp;gt;/.taskcat.yml
+Since each lab uses the cfn-project directory as the project root, this is where your project-specific taskcat config file will reside.
+Global config This config file provides global settings that become defaults for all projects.
+The global config file is located in user&amp;rsquo;s home-directory.</description>
+    </item>
+    
+    <item>
+      <title>Parameter Overrides</title>
+      <link>/050_concepts/00_page2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/050_concepts/00_page2.html</guid>
+      <description>Overrides Parameter Overrides were added to the taskcat to solve a couple of common problems. First, many templates share common parameters that are unique to an AWS account, like a KeyPair name or an S3 Bucket, overrides provided a way to store those centrally for all your projects. Second, we didn&amp;rsquo;t want to add sensitive data (usernames, passwords, tokens) to a git repository. The idea was to store sensitive/unique data outside of a git repository, but still execute a test using this data.</description>
+    </item>
+    
+  </channel>
+</rss>
