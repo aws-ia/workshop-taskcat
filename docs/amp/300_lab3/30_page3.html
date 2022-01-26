@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.92.0" />
+    <meta name="description" content="taskcat workshop">
+<meta name="author" content="Tony Vattathil, Andrew Glenn, Shivansh Signh, Jay McConnell">
+
+    <link rel="icon" href="../../images/favicon.png" type="image/png">
+
+    <title>Modify the template :: taskcat workshop</title>
+
+    
+    <link href="../../css/nucleus.css?1643215003" rel="stylesheet">
+    <link href="../../css/fontawesome-all.min.css?1643215003" rel="stylesheet">
+    <link href="../../css/hybrid.css?1643215003" rel="stylesheet">
+    <link href="../../css/featherlight.min.css?1643215003" rel="stylesheet">
+    <link href="../../css/perfect-scrollbar.min.css?1643215003" rel="stylesheet">
+    <link href="../../css/auto-complete.css?1643215003" rel="stylesheet">
+    <link href="../../css/atom-one-dark-reasonable.css?1643215003" rel="stylesheet">
+    <link href="../../css/theme.css?1643215003" rel="stylesheet">
+    <link href="../../css/hugo-theme.css?1643215003" rel="stylesheet">
+    
+      <link href="../../css/theme-blue.css?1643215003" rel="stylesheet">
+    
+
+    <script src="../../js/jquery-3.3.1.min.js?1643215003"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="../../amp/300_lab3/30_page3.html">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href="../../">
+  <img src="../../images/Taskcat-logo.png" style="width:50%; height:50%;" />
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../../js/lunr.min.js?1643215003"></script>
+<script type="text/javascript" src="../../js/auto-complete.js?1643215003"></script>
+<script type="text/javascript">
+    
+        var baseurl = "\/";
+    
+</script>
+<script type="text/javascript" src="../../js/search.js?1643215003"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/000_pre.html" title="Prerequisites" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../000_pre.html">
+          Prerequisites
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/000_pre/00_page1.html" title="Lab Environment" class="dd-item ">
+        <a href="../../amp/000_pre/00_page1.html">
+        Lab Environment
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/050_concepts.html" title="Getting Started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../050_concepts.html">
+          Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/050_concepts/00_page1.html" title="Config hierarchy" class="dd-item ">
+        <a href="../../amp/050_concepts/00_page1.html">
+        Config hierarchy
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/050_concepts/00_page2.html" title="Parameter Overrides" class="dd-item ">
+        <a href="../../amp/050_concepts/00_page2.html">
+        Parameter Overrides
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/100_lab1.html" title="Lab 1" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../100_lab1.html">
+          Lab 1
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/100_lab1/children1.html" title="Add a (Project Level) config" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../100_lab1/children1.html">
+          Add a (Project Level) config
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/100_lab1/children1/10_page3.html" title="Define project section" class="dd-item ">
+        <a href="../../amp/100_lab1/children1/10_page3.html">
+        Define project section
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/100_lab1/children1/10_page4.html" title="Define tests" class="dd-item ">
+        <a href="../../amp/100_lab1/children1/10_page4.html">
+        Define tests
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/100_lab1/children1/10_page5.html" title="Define regions" class="dd-item ">
+        <a href="../../amp/100_lab1/children1/10_page5.html">
+        Define regions
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/100_lab1/children1/10_page6.html" title="Define parameters" class="dd-item ">
+        <a href="../../amp/100_lab1/children1/10_page6.html">
+        Define parameters
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/100_lab1/children2.html" title="Lambda packaging" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../100_lab1/children2.html">
+          Lambda packaging
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/100_lab1/children3.html" title="Execute a test" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../100_lab1/children3.html">
+          Execute a test
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/100_lab1/children4.html" title="View test results" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../100_lab1/children4.html">
+          View test results
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/200_lab2.html" title="Lab 2" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../200_lab2.html">
+          Lab 2
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/200_lab2/20_page1.html" title="Create Psuedo Parameters" class="dd-item ">
+        <a href="../../amp/200_lab2/20_page1.html">
+        Create Psuedo Parameters
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/200_lab2/20_page2.html" title="Execute a taskcat test" class="dd-item ">
+        <a href="../../amp/200_lab2/20_page2.html">
+        Execute a taskcat test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/200_lab2/20_page3.html" title="Check Template Outputs" class="dd-item ">
+        <a href="../../amp/200_lab2/20_page3.html">
+        Check Template Outputs
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/300_lab3.html" title="Lab 3" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../../300_lab3.html">
+          Lab 3
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/300_lab3/30_page1.html" title="Add additional regions &amp; test" class="dd-item ">
+        <a href="../../amp/300_lab3/30_page1.html">
+        Add additional regions &amp; test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/300_lab3/30_page2.html" title="View test results" class="dd-item ">
+        <a href="../../amp/300_lab3/30_page2.html">
+        View test results
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/300_lab3/30_page3.html" title="Modify the template" class="dd-item active">
+        <a href="../../amp/300_lab3/30_page3.html">
+        Modify the template
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/300_lab3/30_page4.html" title="Test again &amp; verify!" class="dd-item ">
+        <a href="../../amp/300_lab3/30_page4.html">
+        Test again &amp; verify!
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/400_lab4.html" title="Lab 4" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../400_lab4.html">
+          Lab 4
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/400_lab4/40_page1.html" title="Run test with no-delete" class="dd-item ">
+        <a href="../../amp/400_lab4/40_page1.html">
+        Run test with no-delete
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/400_lab4/40_page2.html" title="Clean up tests" class="dd-item ">
+        <a href="../../amp/400_lab4/40_page2.html">
+        Clean up tests
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/500_lab5.html" title="Lab 5" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../500_lab5.html">
+          Lab 5
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/500_lab5/1_page.html" title="Initialize Git repo" class="dd-item ">
+        <a href="../../amp/500_lab5/1_page.html">
+        Initialize Git repo
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/500_lab5/10_page.html" title="Deploy CI/CD pipeline" class="dd-item ">
+        <a href="../../amp/500_lab5/10_page.html">
+        Deploy CI/CD pipeline
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/500_lab5/20_page.html" title="View test and code promotion" class="dd-item ">
+        <a href="../../amp/500_lab5/20_page.html">
+        View test and code promotion
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/600_lab6.html" title="Bonus" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../../600_lab6.html">
+          Bonus
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/600_lab6/60_page1.html" title="Fix a broken project" class="dd-item ">
+        <a href="../../amp/600_lab6/60_page1.html">
+        Fix a broken project
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/600_lab6/60_page2.html" title="Build a project from scratch" class="dd-item ">
+        <a href="../../amp/600_lab6/60_page2.html">
+        Build a project from scratch
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+      <li data-nav-id="/amp/600_lab6/60_page3.html" title="Hack the quiz app" class="dd-item ">
+        <a href="../../amp/600_lab6/60_page3.html">
+        Hack the quiz app
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+      <section id="shortcuts">
+        <h3></h3>
+        <ul>
+          
+              <li> 
+                  <a class="padding" href="https://aws-ia.github.io/taskcat/"><i class='fas fa-bookmark'></i> taskcat documentation</a>
+              </li>
+          
+        </ul>
+      </section>
+    
+
+    
+    <section id="footer">
+      <left>
+    <p>Latest Taskcat Version</p>
+    <a href="https://badge.fury.io/py/taskcat"><img alt="PyPI version" src="https://badge.fury.io/py/taskcat.svg" /></a></p>
+    <p>Repo Status</p>
+    <a class="github-button" href="https://github.com/aws-ia" aria-label="Follow @taskcat on GitHub">Follow @aws-ia</a><p>
+    <a class="github-button" href="https://github.com/aws-ia/taskcat/subscription" data-icon="octicon-eye" aria-label="Watch aws-ia/taskcat on GitHub">Watch</a><p>
+    <a class="github-button" href="https://github.com/aws-ia/taskcat" data-icon="octicon-star" data-show-count="true" aria-label="Star on GitHub">Star</a><p>
+    <h5 class="copyright">&copy; 2019 Amazon Web Services, Inc. or its Affiliates. All rights reserved.<h5>
+
+</left>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script> 
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='../../amp/'>Taskcat Workshop</a> > <a href='../../300_lab3.html'>Lab 3</a> > Modify the template
+          
+         
+          
+         
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#making-our-template-multi-region">Making our template multi-region</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Modify the template
+            </h1>
+          
+
+        
+
+
+
+<h2 id="making-our-template-multi-region">Making our template multi-region</h2>
+<p>There are multiple potential strategies to deal with resources that require the content
+in S3 to be in the same region as the stack. In this example we will add a resource to
+the stack that copies the Lambda zip from the bucket in us-east-1 to the stack region
+before creating the lambda.</p>
+<ul>
+<li>In VSCode, edit the <strong>cfn_project/templates/lab3.template.yaml</strong> file. We&rsquo;ll be adding
+the following snippet to the <em>Resources</em> section of the template.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">CopyZipsTemplate</span>:
+      <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">AWS::CloudFormation::Stack</span>
+      <span style="color:#f92672">Properties</span>:
+        <span style="color:#f92672">TemplateURL</span>: !<span style="color:#ae81ff">Sub &#34;https://${S3BucketName}.s3.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml&#34;</span>
+        <span style="color:#f92672">Parameters</span>:
+          <span style="color:#f92672">S3BucketName</span>: !<span style="color:#ae81ff">Ref S3BucketName</span>
+          <span style="color:#f92672">S3KeyPrefix</span>: !<span style="color:#ae81ff">Ref S3KeyPrefix</span>
+          <span style="color:#f92672">SourceObjects</span>: <span style="color:#e6db74">&#34;lambda_functions/packages/GenRandom/lambda.zip&#34;</span>
+</code></pre></div><p>This child stack contains a Lambda backed custom resource that takes the SourceObjects
+passed in and copies it to a new bucket in the same region as the stack. The outputs
+return the name of the new bucket, that we will use in the Code property of our
+<strong>GenRandomLambda</strong> resource.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">    <span style="color:#f92672">GenRandomLambda</span>:
+      <span style="color:#f92672">Type</span>: <span style="color:#ae81ff">AWS::Lambda::Function</span>
+      <span style="color:#f92672">Properties</span>:
+        <span style="color:#f92672">Description</span>: <span style="color:#ae81ff">Lambda creates simple random string</span>
+        <span style="color:#f92672">Handler</span>: <span style="color:#ae81ff">lambda_function.handler</span>
+        <span style="color:#f92672">Runtime</span>: <span style="color:#ae81ff">python3.7</span>
+        <span style="color:#f92672">Role</span>: !<span style="color:#ae81ff">GetAtt &#39;LambdaExecutionRole.Arn&#39;</span>
+        <span style="color:#f92672">Timeout</span>: <span style="color:#ae81ff">300</span>
+        <span style="color:#f92672">Code</span>:
+          <span style="color:#f92672">S3Bucket</span>: !<span style="color:#ae81ff">GetAtt &#39;CopyZipsTemplate.Outputs.LambdaZipsBucket&#39;</span>
+          <span style="color:#f92672">S3Key</span>: !<span style="color:#ae81ff">Sub &#39;${S3KeyPrefix}lambda_functions/packages/GenRandom/lambda.zip&#39;</span>
+</code></pre></div><p>The full <strong>cfn_project/templates/lab3.template.yaml</strong> template should reflect the
+following:</p>
+<ul>
+<li>Feel free to copy and paste!</li>
+</ul>
+<pre tabindex="0"><code>AWSTemplateFormatVersion: 2010-09-09
+Parameters:
+      S3BucketName:
+        AllowedPattern: '^[0-9a-zA-Z]+([0-9a-zA-Z-]*[0-9a-zA-Z])*$'
+        ConstraintDescription: &gt;-
+          Bucket name can include numbers, lowercase letters, uppercase
+          letters, and hyphens (-). It cannot start or end with a hyphen (-).
+        Description: &gt;-
+          S3 bucket name for assets. Bucket name can
+          include numbers, lowercase letters, uppercase letters, and hyphens (-). It
+          cannot start or end with a hyphen (-).
+        Type: String
+      S3KeyPrefix:
+        AllowedPattern: '^[0-9a-zA-Z-/]*$'
+        ConstraintDescription: &gt;-
+          Can include numbers, lowercase letters, uppercase letters, hyphens (-), and forward slash (/).
+        Default: 'cfn-project/'
+        Description: &gt;-
+          S3 key prefix where assets are located should end with forward slash (/).
+        Type: String
+Resources:
+      LambdaExecutionRole:
+        Type: AWS::IAM::Role
+        Properties:
+          AssumeRolePolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+            - Effect: Allow
+              Principal:
+                Service:
+                - lambda.amazonaws.com
+              Action:
+              - sts:AssumeRole
+          Path: &quot;/&quot;
+          Policies:
+          - PolicyName: root
+            PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+              - Effect: Allow
+                Action:
+                - logs:*
+                Resource: arn:aws:logs:*:*:*
+      GenRandomLambda:
+        Type: AWS::Lambda::Function
+        Properties:
+          Description: Lambda creates simple random string
+          Handler: lambda_function.handler
+          Runtime: python3.7
+          Role: !GetAtt 'LambdaExecutionRole.Arn'
+          Timeout: 300
+          Code:
+            S3Bucket: !GetAtt 'CopyZipsTemplate.Outputs.LambdaZipsBucket'
+            S3Key: !Sub '${S3KeyPrefix}lambda_functions/packages/GenRandom/lambda.zip'
+      StringGenerator:
+        Type: Custom::RandomString
+        Properties:
+          ServiceToken: !GetAtt GenRandomLambda.Arn
+          Length: 12
+      CopyZipsTemplate:
+        Type: AWS::CloudFormation::Stack
+        Properties:
+          TemplateURL: !Sub &quot;https://${S3BucketName}.s3.amazonaws.com/${S3KeyPrefix}templates/copy-zips.template.yaml&quot;
+          Parameters:
+            S3BucketName: !Ref S3BucketName
+            S3KeyPrefix: !Ref S3KeyPrefix
+            SourceObjects: &quot;lambda_functions/packages/GenRandom/lambda.zip&quot;
+Outputs:
+      GeneratedRandomString:
+        Description: Generated Random String
+        Value: !GetAtt StringGenerator.RandomString
+</code></pre>
+
+<footer class=" footline" >
+	
+</footer>
+
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../../amp/300_lab3/30_page2.html" title="View test results"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../../amp/300_lab3/30_page4.html" title="Test again &amp; verify!" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../../js/clipboard.min.js?1643215003"></script>
+    <script src="../../js/perfect-scrollbar.min.js?1643215003"></script>
+    <script src="../../js/perfect-scrollbar.jquery.min.js?1643215003"></script>
+    <script src="../../js/jquery.sticky.js?1643215003"></script>
+    <script src="../../js/featherlight.min.js?1643215003"></script>
+    <script src="../../js/highlight.pack.js?1643215003"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../../js/modernizr.custom-3.6.0.js?1643215003"></script>
+    <script src="../../js/learn.js?1643215003"></script>
+    <script src="../../js/hugo-learn.js?1643215003"></script>
+
+    <link href="../../mermaid/mermaid.css?1643215003" rel="stylesheet" />
+    <script src="../../mermaid/mermaid.js?1643215003"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    
+
+  </body>
+</html>
+

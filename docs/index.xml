@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Taskcat Workshop on taskcat workshop</title>
+    <link>/</link>
+    <description>Recent content in Taskcat Workshop on taskcat workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lab Environment</title>
+      <link>/000_pre/00_page1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/000_pre/00_page1.html</guid>
+      <description>You will use AWS Appstream to connect to your lab environment. You will find the Appstream URL in your team dashboard.
+@TODO Screenshot
+Lab information The AWS Appstream session that you are using for this hands on lab has the following programs pre-installed:
+ Python3 (taskcat is Python program) taskcat (pip install taskcat) Vscode with plugins pre-installed  taskcat config validation cfn-lint validation CloudFormation template auto-complete and doc links from the cfn-resource-spec    Auto save The IDE is configured to auto-save files when they are changed, so there is no need to manually save files.</description>
+    </item>
+    
+    <item>
+      <title>Config hierarchy</title>
+      <link>/050_concepts/00_page1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/050_concepts/00_page1.html</guid>
+      <description>Taskcat uses two config files: Global config and Project config
+Project Config This config file provides project-specific configurations.
+The project config file is located in the root of your project folder &amp;lt;PROJECT_ROOT&amp;gt;/.taskcat.yml
+Since each lab uses the cfn-project directory as the project root, this is where your project-specific taskcat config file will reside.
+Global config This config file provides global settings that become defaults for all projects.
+The global config file is located in user&amp;rsquo;s home-directory.</description>
+    </item>
+    
+    <item>
+      <title>Parameter Overrides</title>
+      <link>/050_concepts/00_page2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/050_concepts/00_page2.html</guid>
+      <description>Overrides Parameter Overrides were added to the taskcat to solve a couple of common problems. First, many templates share common parameters that are unique to an AWS account, like a KeyPair name or an S3 Bucket, overrides provided a way to store those centrally for all your projects. Second, we didn&amp;rsquo;t want to add sensitive data (usernames, passwords, tokens) to a git repository. The idea was to store sensitive/unique data outside of a git repository, but still execute a test using this data.</description>
+    </item>
+    
+    <item>
+      <title>Define project section</title>
+      <link>/100_lab1/children1/10_page3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/100_lab1/children1/10_page3.html</guid>
+      <description>First, you will create a project section in your project configuration file.
+Add a project section To add a project section, copy and paste the following in .taskcat.yml file.
+project: name: cfn-project  It is important that you keep the project name as cfn-project. This value is being used in other places in CloudFormation templates, that you will be using in this workshop. Changing the project name may cause issues in future labs.</description>
+    </item>
+    
+    <item>
+      <title>Define tests</title>
+      <link>/100_lab1/children1/10_page4.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/100_lab1/children1/10_page4.html</guid>
+      <description>Next, you will create a test definition in the config file
+Adding test definition   Define a test called mytest and provide a value for the template key.
+  Specify template path relative to your project root, which is templates/lab1.template.yaml
+  At this point, your .taskcat.yml file should look like below.
+project: name: cfn-project tests: mytest: template: templates/lab1.template.yaml </description>
+    </item>
+    
+    <item>
+      <title>Define regions</title>
+      <link>/100_lab1/children1/10_page5.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/100_lab1/children1/10_page5.html</guid>
+      <description>Now, you will define in which AWS regions you want to test your cloudformation templates.
+Add regions to your test The regions: key is optional for the tests. By default regions inherit from the global configuration (We will conver global configs later in this lab)
+The regions key takes a list of regions. When defined in a test, taskcat will limit test to those regions
+For now, specifiy only one region us-east-1.</description>
+    </item>
+    
+    <item>
+      <title>Define parameters</title>
+      <link>/100_lab1/children1/10_page6.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/100_lab1/children1/10_page6.html</guid>
+      <description>You can pass parameter values to your template through taskcat configuration file. These values will be passed to your template when launching the stack.
+Add a parameter section to the test Add the parameters key to mytest, and set the value of S3BucketName to $[taskcat_autobucket].
+parameters: S3BucketName: &amp;#39;$[taskcat_autobucket]&amp;#39; $[taskcat_autobucket] is a pseudo-parameter. This tells taskcat to automatically generate an S3 bucket name, create that bucket and use it for test execution.</description>
+    </item>
+    
+    <item>
+      <title>Create Psuedo Parameters</title>
+      <link>/200_lab2/20_page1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/200_lab2/20_page1.html</guid>
+      <description>Add Psuedo-Parameters to your project-level taskcat config   Edit your cfn_project/.taskcat.yml parameters to include psuedo-parameters. Please see the Taskcat Concepts section for more details on psuedo-parameters
+  Example project config file:
+  project: name: cfn-project tests: mytest: template: templates/lab2.template.yaml regions: - us-east-1 parameters: S3BucketName: &amp;#39;$[taskcat_autobucket]&amp;#39; S3KeyPrefix: &amp;#39;cfn-project/&amp;#39; LicenseToken: &amp;#39;value-to-be-overriden-by-global-config&amp;#39; AvailabilityZones: &amp;#39;$[taskcat_genaz_2]&amp;#39; Add Psuedo-parameters to your global taskcat config.   Edit your parameters to include psuedo-parameters.
+  Note: For the purposes of this lab, we&amp;rsquo;ve created a shortcut command to access to the file, in the IDE terminal type:</description>
+    </item>
+    
+    <item>
+      <title>Execute a taskcat test</title>
+      <link>/200_lab2/20_page2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/200_lab2/20_page2.html</guid>
+      <description>Start a test From the cfn-project dir run you taskcat test
+cd /workshop/lab2/cfn-project taskcat test run Estimated runtime (5 mins) </description>
+    </item>
+    
+    <item>
+      <title>Check Template Outputs</title>
+      <link>/200_lab2/20_page3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/200_lab2/20_page3.html</guid>
+      <description>Login to the AWS Console  from the Event Engine dashboard click login to AWS console navigate to the CloudFormation console in us-east-1 (N. Virginia) Change the filter to view Deleted stacks Select the top stack ( they are ordered by creation date) Click on the &amp;ldquo;Outputs&amp;rdquo; tab  Notice that the values for the LicenseToken parameter has been replaced with the value specified in the global override.
+Notice that the value for AvailablityZones has been replaced with 2 az names from the us-east-1 region</description>
+    </item>
+    
+    <item>
+      <title>Add additional regions &amp; test</title>
+      <link>/300_lab3/30_page1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/300_lab3/30_page1.html</guid>
+      <description>Add more regions  Edit your lab3/cfn_project/.taskcat.yml parameters to include additional regions. Below is an example of what your file should look like once you&amp;rsquo;re done.  project: name: cfn-project tests: mytest: template: templates/lab3.template.yaml regions: - &amp;quot;us-east-2&amp;quot; - &amp;quot;us-west-2&amp;quot; parameters: S3BucketName: &#39;$[taskcat_autobucket]&#39; S3KeyPrefix: &#39;cfn-project/&#39; LicenseToken: &#39;MY-FAKE-LICENSE-KEY&#39; AvailabilityZones: &#39;$[taskcat_genaz_2]&#39; Test the new regions cd /workshop/lab3/cfn-project taskcat test run </description>
+    </item>
+    
+    <item>
+      <title>View test results</title>
+      <link>/300_lab3/30_page2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/300_lab3/30_page2.html</guid>
+      <description>Test Results After the test completes you will see a new folder under cfn-project called taskcat_outputs
+cfn-project ├── lambda_functions ├── templates ├── .taskcat.yml └── taskcat_outputs/index.html &amp;lt; - (report) To open taskcat_outputs/index.html in the AppStream browser, we&amp;rsquo;ve provided a simple shortcut that can be executed from the terminal:
+open-taskcat-report To see the test logs click the View Logs link</description>
+    </item>
+    
+    <item>
+      <title>Modify the template</title>
+      <link>/300_lab3/30_page3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/300_lab3/30_page3.html</guid>
+      <description>Making our template multi-region There are multiple potential strategies to deal with resources that require the content in S3 to be in the same region as the stack. In this example we will add a resource to the stack that copies the Lambda zip from the bucket in us-east-1 to the stack region before creating the lambda.
+ In VSCode, edit the cfn_project/templates/lab3.template.yaml file. We&amp;rsquo;ll be adding the following snippet to the Resources section of the template.</description>
+    </item>
+    
+    <item>
+      <title>Test again &amp; verify!</title>
+      <link>/300_lab3/30_page4.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/300_lab3/30_page4.html</guid>
+      <description>Run another test from the lab3/cfn-project folder in the terminal, run another taskcat test:
+cd /workshop/lab3/cfn-project taskcat test run Test Results After the test completes you will see a new folder under cfn-project called taskcat_outputs
+cfn-project ├── lambda_functions ├── templates ├── .taskcat.yml └── taskcat_outputs/index.html &amp;lt; - (report) To open taskcat_outputs/index.html in the AppStream browser, we&amp;rsquo;ve provided a simple shortcut that can be executed from the terminal:
+open-taskcat-report To see the test logs click the View Logs link</description>
+    </item>
+    
+    <item>
+      <title>Run test with no-delete</title>
+      <link>/400_lab4/40_page1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/400_lab4/40_page1.html</guid>
+      <description>Execute the test.   Run taskcat test run &amp;ndash;no-delete or -n flag to retain the CloudFormation stack  cd /workshop/lab4/cfn-project taskcat test run --no-delete Launch the application after deployment.  Once the taskcat test completes, navigate to the CloudFormation console by clicking&amp;hellip;  CloudFormation Console
+TODO: Add screenshort for the survey endpoint </description>
+    </item>
+    
+    <item>
+      <title>Clean up tests</title>
+      <link>/400_lab4/40_page2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/400_lab4/40_page2.html</guid>
+      <description>List tests   taskcat can list the tests that have not been cleaned up yet  taskcat test list The output will display the test name, id and region for each active stack launched by taskcat
+Delete the test Using the id from the list command, clean up the test:
+taskcat test clean &amp;lt;TEST_ID&amp;gt;  You can clean up all tests in your account with taskcat test clean ALL</description>
+    </item>
+    
+    <item>
+      <title>Initialize Git repo</title>
+      <link>/500_lab5/1_page.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/500_lab5/1_page.html</guid>
+      <description>To create a CICD pipeline for your project, you need a git repository. This repository will contain all the source code of your project and will be the source to trigger your pipeline.
+For this lab, you will use AWS CodeCommit for your project&amp;rsquo;s git repository. We have already pre-created a Code Commit repsoitory in your team&amp;rsquo;s AWS Account. Click the following link to open the AWS CodeCommit console in a new tab of your browser.</description>
+    </item>
+    
+    <item>
+      <title>Deploy CI/CD pipeline</title>
+      <link>/500_lab5/10_page.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/500_lab5/10_page.html</guid>
+      <description>Now, it&amp;rsquo;s time to setup a CICD pipeline for your project. To do that, go to your team&amp;rsquo;s dasbhoard and make a note of the following values. You will need this to create the pipeline.
+ Your AWS Code Commit repository Url (https://) Your AWS Code Commit repository name - quiz-app  Launch stack To create a CICD pipeline, you will use a CloudFormation template. Click the following button to launch a stack creation for the CICD pipeline.</description>
+    </item>
+    
+    <item>
+      <title>View test and code promotion</title>
+      <link>/500_lab5/20_page.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/500_lab5/20_page.html</guid>
+      <description>Now, after your stack creation is completed successfully and you have a CICD pipeline setup, let&amp;rsquo;s see what does the pipeline do.
+View CICD pipeline On your Cloudformation console, click the Outputs tab.
+Look for CodePipelineURL, and open the link in a new tab in your browser.
+This will open the AWS Code Pipeline console, and you should see a pipeline.
+You may see that, either the Source action or the Build action is in-progress.</description>
+    </item>
+    
+    <item>
+      <title>Fix a broken project</title>
+      <link>/600_lab6/60_page1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/600_lab6/60_page1.html</guid>
+      <description>This project has issues, fix them all to get a taskcat run to pass. Project files are in /workshop/lab6/broken-project.</description>
+    </item>
+    
+    <item>
+      <title>Build a project from scratch</title>
+      <link>/600_lab6/60_page2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/600_lab6/60_page2.html</guid>
+      <description>Write a template that creates a vpc with a private subnet and deploys an ec2 instance into it. This lab will give you insight into the cfn-lint IDE integration, which eases authoring templates. It also gives you an opportunity to build a taskcat config from scratch.
+Template should have the following:
+ Allow users to provide the subnet CIDR block and AZ name via Parameters. Pass taskcat tests in us-east-1, us-west-2 and eu-west-1  To ensure your stack deploys as quickly as possible, define as few vpc resources as possible, NAT gateways in particular can add a few minutes to a vpc deployment</description>
+    </item>
+    
+    <item>
+      <title>Hack the quiz app</title>
+      <link>/600_lab6/60_page3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/600_lab6/60_page3.html</guid>
+      <description>The quiz app has several weaknesses that could be exploited to ensure that you win the custom stickers.</description>
+    </item>
+    
+  </channel>
+</rss>

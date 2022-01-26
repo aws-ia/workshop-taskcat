@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lab 3 on taskcat workshop</title>
+    <link>/300_lab3.html</link>
+    <description>Recent content in Lab 3 on taskcat workshop</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language><atom:link href="/300_lab3/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Add additional regions &amp; test</title>
+      <link>/300_lab3/30_page1.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/300_lab3/30_page1.html</guid>
+      <description>Add more regions  Edit your lab3/cfn_project/.taskcat.yml parameters to include additional regions. Below is an example of what your file should look like once you&amp;rsquo;re done.  project: name: cfn-project tests: mytest: template: templates/lab3.template.yaml regions: - &amp;quot;us-east-2&amp;quot; - &amp;quot;us-west-2&amp;quot; parameters: S3BucketName: &#39;$[taskcat_autobucket]&#39; S3KeyPrefix: &#39;cfn-project/&#39; LicenseToken: &#39;MY-FAKE-LICENSE-KEY&#39; AvailabilityZones: &#39;$[taskcat_genaz_2]&#39; Test the new regions cd /workshop/lab3/cfn-project taskcat test run </description>
+    </item>
+    
+    <item>
+      <title>View test results</title>
+      <link>/300_lab3/30_page2.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/300_lab3/30_page2.html</guid>
+      <description>Test Results After the test completes you will see a new folder under cfn-project called taskcat_outputs
+cfn-project ├── lambda_functions ├── templates ├── .taskcat.yml └── taskcat_outputs/index.html &amp;lt; - (report) To open taskcat_outputs/index.html in the AppStream browser, we&amp;rsquo;ve provided a simple shortcut that can be executed from the terminal:
+open-taskcat-report To see the test logs click the View Logs link</description>
+    </item>
+    
+    <item>
+      <title>Modify the template</title>
+      <link>/300_lab3/30_page3.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/300_lab3/30_page3.html</guid>
+      <description>Making our template multi-region There are multiple potential strategies to deal with resources that require the content in S3 to be in the same region as the stack. In this example we will add a resource to the stack that copies the Lambda zip from the bucket in us-east-1 to the stack region before creating the lambda.
+ In VSCode, edit the cfn_project/templates/lab3.template.yaml file. We&amp;rsquo;ll be adding the following snippet to the Resources section of the template.</description>
+    </item>
+    
+    <item>
+      <title>Test again &amp; verify!</title>
+      <link>/300_lab3/30_page4.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/300_lab3/30_page4.html</guid>
+      <description>Run another test from the lab3/cfn-project folder in the terminal, run another taskcat test:
+cd /workshop/lab3/cfn-project taskcat test run Test Results After the test completes you will see a new folder under cfn-project called taskcat_outputs
+cfn-project ├── lambda_functions ├── templates ├── .taskcat.yml └── taskcat_outputs/index.html &amp;lt; - (report) To open taskcat_outputs/index.html in the AppStream browser, we&amp;rsquo;ve provided a simple shortcut that can be executed from the terminal:
+open-taskcat-report To see the test logs click the View Logs link</description>
+    </item>
+    
+  </channel>
+</rss>
