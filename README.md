@@ -1,4 +1,4 @@
-# taskcat workshop
+# Taskcat workshop
 
 Whether authoring an AWS Quick Start or building an AWS Marketplace template to deploy 
 your product on AWS, having confidence that your AWS CloudFormation templates are the 
